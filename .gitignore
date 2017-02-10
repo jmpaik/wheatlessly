@@ -1,10 +1,7 @@
 # Created by https://www.gitignore.io/api/node,vim,macos,linux,windows
 
 */node_modules
-.env
-.eslintrc
-.gitignore
-package.json
+*/.env
 
 ### Node ###
 # Logs
