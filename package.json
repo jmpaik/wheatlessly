@@ -14,10 +14,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "angular": "^1.6.2",
-    "angular-animate": "^1.6.2",
-    "angular-route": "^1.6.2",
-    "angular-touch": "^1.6.2",
+    "angular": "^1.6.1",
+    "angular-animate": "^1.6.1",
+    "angular-route": "^1.6.1",
+    "angular-touch": "^1.6.1",
     "angular-ui-router": "^0.4.2",
     "babel-core": "^6.22.1",
     "babel-loader": "^6.2.10",
@@ -26,29 +26,27 @@
     "clean-webpack-plugin": "^0.1.15",
     "css-loader": "^0.26.1",
     "dotenv": "^4.0.0",
-    "eslint": "^3.15.0",
     "extract-text-webpack-plugin": "^1.0.1",
-    "file-loader": "^0.10.0",
+    "file-loader": "^0.9.0",
     "html-loader": "^0.4.4",
-    "html-webpack-plugin": "^2.28.0",
+    "html-webpack-plugin": "^2.26.0",
     "ng-file-upload": "^12.2.13",
-    "node-sass": "^4.5.0",
+    "node-sass": "^4.3.0",
     "pascalcase": "^0.1.1",
     "resolve-url-loader": "^1.6.1",
-    "sass-loader": "^5.0.1",
+    "sass-loader": "^4.1.1",
     "style-loader": "^0.13.1",
     "ui-router": "^1.0.0-alpha.3",
     "url-loader": "^0.5.7",
-    "webpack": "^2.2.1"
+    "webpack": "^1.14.0"
   },
   "devDependencies": {
-    "angular-mocks": "^1.6.2",
+    "angular-mocks": "^1.6.1",
     "jasmine-core": "^2.5.2",
-    "karma": "^1.4.1",
+    "karma": "^1.4.0",
     "karma-jasmine": "^1.1.0",
-    "karma-mocha-reporter": "^2.2.2",
     "karma-phantomjs-launcher": "^1.0.2",
-    "karma-webpack": "^2.0.2",
-    "webpack-dev-server": "^2.3.0"
+    "karma-webpack": "^2.0.1",
+    "webpack-dev-server": "^1.16.2"
   }
 }
