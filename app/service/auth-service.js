@@ -1,5 +1,3 @@
-Auth-service
-
 'use strict';
 
 module.exports = ['$q', '$log', '$http', '$window', authService];

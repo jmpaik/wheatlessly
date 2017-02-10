@@ -1,6 +1,3 @@
-Biz-service
-
-
 'use script';
 
 module.exports = ['$q', '$log', '$http', 'authService', bizService];
