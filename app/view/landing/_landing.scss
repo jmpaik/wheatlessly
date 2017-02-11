@@ -1,0 +1,32 @@
+@import "../scss/lib/theme/vars";
+.landing{
+  width: 100%;
+	text-align: center;
+
+	li{
+		margin-top: 25vh;
+		font-size: 4em;
+		// color: $font-color-white;
+		font-weight: bold;
+	}
+	form{
+		margin-top: $gutter-std;
+
+		input[type='text']{
+			width: 22em;
+			padding: $gutter-std / 4 $gutter-std / 2;
+			color: $font-color-tin;
+			border: none;
+			background-color: $font-color-white;
+		}
+		button{
+			display: inline;
+			border: none;
+			width: 2em;
+			height: 2.1em;
+			margin-top: $gutter-std / 4;
+			vertical-align: bottom;
+			background-color: $btn-search-color;
+		}
+	}
+}
