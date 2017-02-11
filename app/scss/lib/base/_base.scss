@@ -1,3 +1,4 @@
+@import "../theme/vars";
 html {
   height: 100%;
   width: 100%;
@@ -5,11 +6,12 @@ html {
 
 body {
  height: 100%;
- width: 80%;
- margin-left: 10%;
+ width: 100%;
  font-family: $font-primary;
- // background-image: url();
+ background: url('../assets/foodParkOptimized.jpg') no-repeat center center fixed;
+ background-size: cover;
 }
+
 li{
 	list-style: none;
 }
