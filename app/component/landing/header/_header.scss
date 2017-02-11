@@ -6,9 +6,6 @@
 	width: 90%;
 	margin-left: 5%;
 	margin-top: $gutter-std / 2;
-	 li{
-		 display: inline-block;
-	 }
 	 button{
 		 font-size: 0.8em;
 		 background-color: inherit;
@@ -24,6 +21,7 @@
 		 display: inline;
 		 float: right;
 		 li{
+			 display: inline-block;
 			 font-size: 0.5em;
 		 }
 	 }
