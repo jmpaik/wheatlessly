@@ -1,0 +1,37 @@
+<section class="login-form">
+  <form
+    name="loginForm"
+    ng-submit="loginCtrl.login()" novalidate>
+    <div
+      ng-class="{
+        'error': loginForm.username.$invalid,
+        'success': loginForm.username.$valid,
+      }">
+
+      <li>signin.</li>
+      <input type="text"
+        class="input-std"
+        name="username"
+        placeholder="username"
+        ng-minlength="4"
+        ng-model="loginCtrl.user.username" required>
+
+      <input type="text" placeholder="email" class="input-std">
+    </div>
+
+    <div
+      ng-class="{
+        'error': loginForm.password.$invalid && loginForm.$submitted,
+        'success': loginForm.password.$valid,
+      }">
+      <input type="password" name="password"
+        class="input-std"
+        ng-disabled="loginForm.username.$invalid"
+        placeholder="password"
+        ng-minlength="3"
+        ng-model="loginCtrl.user.password" required>
+    </div>
+    
+    <button class="btn-std">sign in</button>
+  </form>
+</section>
