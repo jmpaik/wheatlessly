@@ -62,6 +62,7 @@ function authService($q, $log, $http, $window){
     });
   };
 
+  //TODO: normalize login and signin to a single name.
   service.login = function(user){
     $log.debug('authService.login()');
 
