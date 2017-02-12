@@ -9,13 +9,13 @@ function routerConfig($stateProvider, $urlRouterProvider) {
   // $urlRouterProvider.when('/login' , '/join#login');
 
   let states = [
-    {
-      name: 'home',
-      url: '/home',
-      template: require('../view/home/home.html'),
-      controller: 'HomeController',
-      controllerAs: 'homeCtrl'
-    },
+    // {
+    //   name: 'home',
+    //   url: '/home',
+    //   template: require('../view/home/home.html'),
+    //   controller: 'HomeController',
+    //   controllerAs: 'homeCtrl'
+    // },
     {
       name: 'landing',
       url: '/landing',
