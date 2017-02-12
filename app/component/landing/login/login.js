@@ -24,4 +24,14 @@ function LoginController($log, $location, authService) {
       $location.url('/home');
     });
   };
+
+	this.signup = function(user) {
+    $log.debug('loginCtrl.signup()');
+
+
+    authService.signup(user)
+    .then( () => {
+      $location.url('/home');
+    });
+  };
 }

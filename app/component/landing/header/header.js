@@ -4,10 +4,14 @@ require('./_header.scss');
 
 module.exports = {
   template: require('./header.html'),
-  controller: ['$log', 'authService', headerController],
+  controller: ['$log', '$location', 'authService', headerController],
   controllerAs: 'headerCtrl'
 };
 
-function headerController($log){
+function headerController($log, $location){
 		$log.debug('headerController');
+
+		let url = $location.url();
+  	this.showSignup = false;
+		this.showLogin = false;
 };

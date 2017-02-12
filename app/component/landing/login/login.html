@@ -1,22 +1,15 @@
 <section class="login-form">
   <form
-    name="loginForm"
-    ng-submit="loginCtrl.login()" novalidate>
+    name="loginForm" novalidate>
     <div
       ng-class="{
         'error': loginForm.username.$invalid,
         'success': loginForm.username.$valid,
       }">
 
-      <li>signin.</li>
-      <input type="text"
-        class="input-std"
-        name="username"
-        placeholder="username"
-        ng-minlength="4"
-        ng-model="loginCtrl.user.username" required>
-
-      <input type="text" placeholder="email" class="input-std">
+      <input type="email"
+			 placeholder="email"
+			 class="input-std">
     </div>
 
     <div
@@ -31,7 +24,8 @@
         ng-minlength="3"
         ng-model="loginCtrl.user.password" required>
     </div>
-    
-    <button class="btn-std">sign in</button>
+
+		<button class="btn-std" ng-click="loginCtrl.signup(loginCtrl.user)">Join</button>
+		<button class="btn-std" ng-click="loginCtrl.login(loginCtrl.user)">Login</button>
   </form>
 </section>

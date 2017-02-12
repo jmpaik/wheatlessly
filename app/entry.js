@@ -11,6 +11,7 @@ const ngTouch = require('angular-touch');
 const ngAnimate = require('angular-animate');
 const ngFileUpload = require('ng-file-upload');
 
+
 const wheatlessly = angular.module('wheatlessly', [ngTouch, ngAnimate, uiRouter, ngFileUpload]);
 
 let context = require.context('./config/', true, /\.js$/);
