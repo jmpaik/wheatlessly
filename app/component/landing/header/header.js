@@ -1,7 +1,5 @@
 'use strict';
 
-
-
 require('./_header.scss');
 
 module.exports = {
