@@ -9,15 +9,16 @@ module.exports = {
 };
 
 function headerController($log, $location){
-		$log.debug('headerController');
+  $log.debug('headerController');
 
-		let url = $location.url();
-		this.showLogin = function(){
-			return false;
-		};
+  let url = $location.url();
+  this.showLogin = function(){
+    $location.path('/home');
+    return false;
+  };
 
-		this.landing = function(){
-			this.showLogin=false;
-			$location.path('/');
-		}
+  this.landing = function(){
+    this.showLogin=false;
+    $location.path('/');
+  }
 };
