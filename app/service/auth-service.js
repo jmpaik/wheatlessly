@@ -40,31 +40,30 @@ function authService($q, $log, $http, $window){
     return $q.resolve();
   };
 
-  service.signup = function(user) {
-    $log.debug('authService.signup()');
+	service.signup = function(user) {
+	    $log.debug('authService.signup()');
 
-    let url = `${__API_URL__}/api/signup`;
-    let config = {
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
-      }
-    };
+	    let url = `${__API_URL__}/api/signup`;
+	    let config = {
+	      headers: {
+	        'Content-Type': 'application/json',
+	        'Accept': 'application/json',
+	      }
+	    };
 
-    return $http.post(url, user, config)
-    .then( res => {
-      $log.log('success', res.data);
-      return setToken(res.data);
-    })
-    .catch(err => {
-      $log.error('failure', err.message);
-      return $q.reject(err);
-    });
-  };
+	    return $http.post(url, user, config)
+	    .then( res => {
+	      $log.log('success', res.data);
+	      return setToken(res.data);
+	    })
+	    .catch(err => {
+	      $log.error('failure', err.message);
+	      return $q.reject(err);
+	    });
+	  };
 
   service.login = function(user){
     $log.debug('authService.login()');
-
     let url = `${__API_URL__}/api/signin`;
     let base64 = $window.btoa(`${user.username}:${user.password}`);
     let config = {
@@ -80,7 +79,7 @@ function authService($q, $log, $http, $window){
       return setToken(res.data);
     })
     .catch( err => {
-      $log.error(err.message);
+      $log.error('failure', err.message);
       return $q.reject(err);
     });
   };

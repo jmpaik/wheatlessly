@@ -12,6 +12,12 @@ function headerController($log, $location){
 		$log.debug('headerController');
 
 		let url = $location.url();
-  	this.showSignup = false;
-		this.showLogin = false;
+		this.showLogin = function(){
+			return false;
+		};
+
+		this.landing = function(){
+			this.showLogin=false;
+			$location.path('/');
+		}
 };

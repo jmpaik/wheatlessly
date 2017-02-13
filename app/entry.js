@@ -11,7 +11,6 @@ const ngTouch = require('angular-touch');
 const ngAnimate = require('angular-animate');
 const ngFileUpload = require('ng-file-upload');
 
-
 const wheatlessly = angular.module('wheatlessly', [ngTouch, ngAnimate, uiRouter, ngFileUpload]);
 
 let context = require.context('./config/', true, /\.js$/);
@@ -21,9 +20,9 @@ context.keys().forEach( path => {
 
 context = require.context('./service/', true, /\.js$/);
 context.keys().forEach( key => {
-	let name = camelcase(path.basename(key, '.js'));
-	let module = context(key);
-	wheatlessly.service(name, module);
+  let name = camelcase(path.basename(key, '.js'));
+  let module = context(key);
+  wheatlessly.service(name, module);
 });
 
 context = require.context('./view/', true, /\.js$/);

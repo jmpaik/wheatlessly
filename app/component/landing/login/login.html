@@ -1,29 +1,17 @@
 <section class="login-form">
   <form
     name="loginForm" novalidate>
-    <div
-      ng-class="{
-        'error': loginForm.username.$invalid,
-        'success': loginForm.username.$valid,
-      }">
+      
+      <input class="input-std"
+        type="email"
+        placeholder="email"
+        ng-model="loginCtrl.user.email">
 
-      <input type="email"
-			 placeholder="email"
-			 class="input-std">
-    </div>
-
-    <div
-      ng-class="{
-        'error': loginForm.password.$invalid && loginForm.$submitted,
-        'success': loginForm.password.$valid,
-      }">
-      <input type="password" name="password"
-        class="input-std"
-        ng-disabled="loginForm.username.$invalid"
+      <input class="input-std"
+        type="password"
         placeholder="password"
         ng-minlength="3"
         ng-model="loginCtrl.user.password" required>
-    </div>
 
 		<button class="btn-std" ng-click="loginCtrl.signup(loginCtrl.user)">Join</button>
 		<button class="btn-std" ng-click="loginCtrl.login(loginCtrl.user)">Login</button>

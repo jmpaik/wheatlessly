@@ -15,23 +15,30 @@ function LoginController($log, $location, authService) {
   .then( () => {
     $location.url('/home');
   });
-
-  this.login = function() {
+  this.login = function(user) {
     $log.log('loginCtrl.login()');
-
-    authService.login(this.user)
+		user.username = user.email;
+    authService.login(user)
     .then( () => {
       $location.url('/home');
-    });
+			console.log('you are loggedin');
+    })
+		.catch( err => {
+			 $log.log('err= ', err);
+			 alert('username or password is wrong!');
+		});
   };
 
 	this.signup = function(user) {
     $log.debug('loginCtrl.signup()');
-
-
+		user.username = user.email;
     authService.signup(user)
     .then( () => {
       $location.url('/home');
-    });
+			console.log('you are loggedsign');
+    })
+		.catch( err => {
+			 $log.log('err= ', err);
+		});
   };
 }
