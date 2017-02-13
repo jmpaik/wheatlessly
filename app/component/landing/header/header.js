@@ -12,13 +12,15 @@ function headerController($log, $location){
   $log.debug('headerController');
 
   let url = $location.url();
-  this.showLogin = function(){
+  this.showLoginPage = function(){
+
     $location.path('/home');
-    return false;
+    this.showLogin = true;
   };
 
   this.landing = function(){
-    this.showLogin=false;
+    this.showLogin = false;
+
     $location.path('/');
   }
 };
