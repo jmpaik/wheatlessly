@@ -4,10 +4,10 @@
   "description": "",
   "main": "entry.js",
   "scripts": {
-    "build": "./node_modules/webpack/bin/webpack.js",
-    "build-watch": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot",
-    "test": "./node_modules/karma/bin/karma start --single-run",
-    "test-watch": "./node_modules/karma/bin/karma",
+    "build": "node ./node_modules/webpack/bin/webpack.js",
+    "build-watch": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot",
+    "test": "node ./node_modules/karma/bin/karma start --single-run",
+    "test-watch": "node ./node_modules/karma/bin/karma",
     "lint": "eslint app/"
   },
   "keywords": [],
@@ -17,6 +17,7 @@
     "angular": "^1.6.1",
     "angular-animate": "^1.6.1",
     "angular-route": "^1.6.1",
+    "angular-sweetalert": "^1.1.2",
     "angular-touch": "^1.6.1",
     "angular-ui-router": "^0.4.2",
     "babel-core": "^6.22.1",
