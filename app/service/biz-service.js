@@ -9,16 +9,15 @@ let headers = {
   'Content-Type': 'application/json'
 };
 
-
 function bizService($q, $log, $http, authService){
-  $log.debug('bizService');
+  $log.debug('bizService()');
 
   let service = {};
 
-  service.biz = [];
+  service.searchResults = [];
 
   service.createBiz = function(biz){
-    $log.debug('bizService.createBiz');
+    $log.debug('bizService.createBiz()');
 
     return authService.getToken()
     .then( token => {
@@ -26,18 +25,30 @@ function bizService($q, $log, $http, authService){
       headers.Authorization = `Bearer ${token}`;
 
       return $http.post(url, biz, headers);
-    })
-    .then( res => {
-      $log.debug('biz created');
+    });
+  };
 
-      let biz = res.data;
-      service.biz.unshift(biz);
+  //param query should be an object
+  // { southwest: { lat, lng }, northeast: { lat, lng } }
+  service.findBizs = function(query) {
+    $log.debug('bizService.findBizs()', query);
 
-      return biz;
-    })
-    .catch( err => {
-      $log.error(err.message);
-      return $q.reject(err);
+    return authService.getToken()
+    .then( token => {
+      let url = baseUrl;
+      headers.Authorization = `Bearer ${token}`;
+      let sw = `${query.southwest.lat},${query.southwest.lng}`;
+      sw = encodeURIComponent(sw);
+      let ne = `${query.northeast.lat},${query.northeast.lng}`;
+      ne = encodeURIComponent(ne);
+
+      url += `?southwest=${sw}&northeast=${ne}`;
+
+      $log.debug('Fetching:',url);
+      return $http.get(url, headers)
+      .then( res => {
+        service.searchResults = res;
+      });
     });
   };
 
