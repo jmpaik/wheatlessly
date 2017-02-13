@@ -6,17 +6,18 @@
   position: relative;
 
   h2{
-    font-size: 12vw;
+    font-size: 9vw;
     color: $font-color-white;
     font-weight: bold;
+    margin-bottom: 2%;
   }
   form{
     position: absolute;
     top: 30%;
-    left: 15%;
+    left: 23%;
 
     input[type='text']{
-      width: 55vw;
+      width: 40vw;
       padding: $gutter-std / 4 $gutter-std / 2;
       color: $font-color-tin;
       border: none;
