@@ -11,15 +11,22 @@ module.exports = {
 function headerController($log, $location){
   $log.debug('headerController');
 
-  let url = $location.url();
   this.showLoginPage = function(){
 
     $location.path('/home');
     this.showLogin = true;
+    this.showSignup = false;
+  };
+  this.showSignupPage = function(){
+
+    $location.path('/home');
+    this.showSignup = true;
+    this.showLogin = false;
   };
 
   this.landing = function(){
     this.showLogin = false;
+    this.showSignup = false;
 
     $location.path('/');
   }
