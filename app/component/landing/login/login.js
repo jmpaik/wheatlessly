@@ -17,7 +17,6 @@ function LoginController($log, $location, authService) {
   });
   this.login = function(user) {
     $log.log('loginCtrl.login()');
-		user.username = user.email;
     authService.login(user)
     .then( () => {
       $location.url('/home');
@@ -25,7 +24,7 @@ function LoginController($log, $location, authService) {
     })
 		.catch( err => {
 			 $log.log('err= ', err);
-			 alert('username or password is wrong!');
+			 alert('email or password is wrong!');
 		});
   };
 

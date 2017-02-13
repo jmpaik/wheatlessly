@@ -7,6 +7,6 @@ module.exports = ['$log', '$location', '$rootScope', 'authService', homeControll
 function homeController($log, $location){
   $log.debug('homeController');
 
-	 let url = $location.url();
-	 this.showHome = url === '' || '/home' || '/';
+  let url = $location.url();
+  this.showHome = url === '' || '/home' || '/';
 }
