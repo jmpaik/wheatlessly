@@ -16,7 +16,7 @@ const app = angular.module('wheatlessly', [uiRouter, ngFileUpload, ngAnimate]);
 
 let context = require.context('./config/', true, /\.js$/);
 context.keys().forEach( path => {
-  wheatlessly.config(context(path));
+  app.config(context(path));
 });
 
 context = require.context('./view/', true, /\.js$/);
@@ -31,11 +31,11 @@ context.keys().forEach( key => {
   app.service(name, context(key));
 });
 
-context = require.context('./service/', true, /\.js$/);
+context = require.context('./component/', true, /\.js$/);
 context.keys().forEach( key => {
   let name = camelcase(path.basename(key, '.js'));
   let module = context(key);
-  wheatlessly.service(name, module);
+  app.component(name, module);
 });
 
 // context = require.context('./directive/', true, /\.js$/);
