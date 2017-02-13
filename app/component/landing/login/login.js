@@ -27,17 +27,4 @@ function LoginController($log, $location, authService) {
 			 alert('email or password is wrong!');
 		});
   };
-
-	this.signup = function(user) {
-    $log.debug('loginCtrl.signup()');
-		user.username = user.email;
-    authService.signup(user)
-    .then( () => {
-      $location.url('/home');
-			console.log('you are loggedsign');
-    })
-		.catch( err => {
-			 $log.log('err= ', err);
-		});
-  };
 }
