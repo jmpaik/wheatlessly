@@ -62,10 +62,12 @@ function authService($q, $log, $http, $window){
     });
   };
 
+  //TODO: normalize login and signin to a single name.
   service.login = function(user){
     $log.debug('authService.login()');
 
     let url = `${__API_URL__}/api/signin`;
+    //TODO: username -> email
     let base64 = $window.btoa(`${user.username}:${user.password}`);
     let config = {
       headers: {
