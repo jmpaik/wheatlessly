@@ -13,7 +13,6 @@ module.exports = ['$q', '$log', '$http', picService];
 //   created: { type: Date, default: Date.now }
 // }));
 
-
 function picService($q, $log, $http) {
 
   $log.debug('pic service');
