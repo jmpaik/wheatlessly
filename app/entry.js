@@ -18,13 +18,6 @@ context.keys().forEach( path => {
   wheatlessly.config(context(path));
 });
 
-context = require.context('./service/', true, /\.js$/);
-context.keys().forEach( key => {
-  let name = camelcase(path.basename(key, '.js'));
-  let module = context(key);
-  wheatlessly.service(name, module);
-});
-
 context = require.context('./view/', true, /\.js$/);
 context.keys().forEach( key => {
   let name = pascalcase(path.basename(key, '.js'));
@@ -32,9 +25,9 @@ context.keys().forEach( key => {
   wheatlessly.controller(name, module);
 });
 
-context = require.context('./component/', true, /\.js$/);
+context = require.context('./service/', true, /\.js$/);
 context.keys().forEach( key => {
   let name = camelcase(path.basename(key, '.js'));
   let module = context(key);
-  wheatlessly.component(name, module);
+  wheatlessly.service(name, module);
 });

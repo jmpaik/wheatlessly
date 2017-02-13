@@ -1,19 +1,19 @@
 <section class="login-form">
   <form
-    name="loginForm" novalidate>
-      
-      <input class="input-std"
-        type="email"
-        placeholder="email"
-        ng-model="loginCtrl.user.email">
+  name="loginForm" novalidate>
 
-      <input class="input-std"
-        type="password"
-        placeholder="password"
-        ng-minlength="3"
-        ng-model="loginCtrl.user.password" required>
+  <input class="input-std"
+  type="email"
+  placeholder="email"
+  ng-model="loginCtrl.user.email">
 
-		<button class="btn-std" ng-click="loginCtrl.signup(loginCtrl.user)">Join</button>
-		<button class="btn-std" ng-click="loginCtrl.login(loginCtrl.user)">Login</button>
-  </form>
+  <input class="input-std"
+  type="password"
+  placeholder="password"
+  ng-minlength="3"
+  ng-model="loginCtrl.user.password" required>
+
+  <button class="btn-std" ng-click="loginCtrl.signup(loginCtrl.user)">Join</button>
+  <button class="btn-std" ng-click="loginCtrl.login(loginCtrl.user)">Login</button>
+</form>
 </section>
