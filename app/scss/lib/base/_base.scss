@@ -15,3 +15,18 @@ body {
 li{
 	list-style: none;
 }
+
+.input-std{
+		display: block;
+		font-size: 0.8em;
+		padding: 0.1em 0.5em;
+		margin: $gutter-std / 2;
+	}
+
+.btn-std{
+	border: none;
+	padding: 0.2em 1em;
+	background-color: $btn-search-color;
+	margin: $gutter-std / 2;
+	color: gray;
+}

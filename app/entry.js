@@ -15,8 +15,8 @@ const ngAnimate = require('angular-animate');
 const app = angular.module('wheatlessly', [uiRouter, ngFileUpload, ngAnimate]);
 
 let context = require.context('./config/', true, /\.js$/);
-context.keys().forEach( key => {
-  app.config(context(key));
+context.keys().forEach( path => {
+  app.config(context(path));
 });
 
 context = require.context('./view/', true, /\.js$/);
@@ -34,7 +34,8 @@ context.keys().forEach( key => {
 context = require.context('./component/', true, /\.js$/);
 context.keys().forEach( key => {
   let name = camelcase(path.basename(key, '.js'));
-  app.component(name, context(key));
+  let module = context(key);
+  app.component(name, module);
 });
 
 // context = require.context('./directive/', true, /\.js$/);
