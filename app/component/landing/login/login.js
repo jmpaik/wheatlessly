@@ -11,6 +11,8 @@ module.exports = {
 function LoginController($log, $location, authService) {
   $log.debug('LoginController');
 
+  this.user = {};
+
   authService.getToken()
   .then( () => {
     $location.url('/home');
@@ -20,11 +22,10 @@ function LoginController($log, $location, authService) {
     authService.login(user)
     .then( () => {
       $location.url('/home');
-			console.log('you are loggedin');
+      console.log('you are loggedin');
     })
-		.catch( err => {
-			 $log.log('err= ', err);
-			 alert('email or password is wrong!');
-		});
+    .catch( err => {
+      $log.err('failed login:', err);
+    });
   };
 }
