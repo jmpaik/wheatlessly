@@ -6,7 +6,6 @@
 	position: relative;
 
 	li{
-		// margin-top: 25vh;
 		font-size: 12vw;
 		color: $font-color-white;
 		font-weight: bold;
@@ -17,7 +16,7 @@
 		left: 15%;
 
 		input[type='text']{
-			width: 50vw;
+			width: 55vw;
 			padding: $gutter-std / 4 $gutter-std / 2;
 			color: $font-color-tin;
 			border: none;
@@ -29,7 +28,7 @@
 			display: inline;
 			border: none;
 			width: 5vw;
-			height: 1.7em;
+			height: 1.45em;
 			margin-top: $gutter-std / 4;
 			vertical-align: bottom;
 			background-color: $btn-search-color;
