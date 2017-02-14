@@ -24,7 +24,7 @@ function LoginController($log, $location, authService) {
     authService.login(user)
     .then( () => {
       $location.url('/home');
-			$log.log('you are loggedin');
+      $log.log('you are loggedin');
     })
     .catch( err => {
       $log.err('failed login:', err);

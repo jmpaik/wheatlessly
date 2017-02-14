@@ -16,7 +16,7 @@ function SignupController($log, $location, authService) {
     $location.url('/home');
   });
 
-	this.signup = function(user) {
+  this.signup = function(user) {
     $log.debug('signupCtrl.signup()');
 
     if(user.email !== user.emailCopy){
@@ -28,8 +28,8 @@ function SignupController($log, $location, authService) {
     .then( () => {
       $location.url('/home');
     })
-		.catch( err => {
-			 $log.log('err= ', err);
-		});
+    .catch( err => {
+      $log.log('err= ', err);
+    });
   };
 }
