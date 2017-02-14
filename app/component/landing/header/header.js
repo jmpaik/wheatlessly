@@ -26,7 +26,7 @@ function headerController($log, $location, authService){
     authService.logout();
   };
   this.showLoginPage = function(){
-
+    
     $location.path('/home');
     this.showLogin = true;
     this.showSignup = false;
@@ -41,14 +41,10 @@ function headerController($log, $location, authService){
   this.landing = function(){
     this.showLogin = false;
     this.showSignup = false;
-
     $location.path('/');
+  };
 
-  }
-};
-
-  }
   this.business = function(){
     $location.path('/create-biz');
-  }
+  };
 };
