@@ -28,6 +28,29 @@ function bizService($q, $log, $http, authService){
     });
   };
 
+  //TODO: Cache api results until token changes.
+  service.getBiz = function() {
+    $log.debug('bizService.getBiz()');
+
+    return authService.getToken()
+    .then( token => {
+      headers.Authorization = `Bearer ${token}`;
+      return $http.post(baseUrl, headers);
+    });
+  };
+
+  service.updateBiz = function(biz) {
+    $log.debug('bizService.updateBiz()');
+
+    return authService.getToken()
+    .then( token => {
+      let url = `baseUrl/${biz._id}`;
+      headers.Authorization = `Bearer ${token}`;
+
+      return $http.put(url, biz, headers);
+    });
+  };
+
   //param query should be an object
   // { southwest: { lat, lng }, northeast: { lat, lng } }
   service.findBizs = function(query) {
