@@ -21,7 +21,7 @@ function SignupController($log, $location, authService) {
 
     if(user.email !== user.emailCopy){
       this.user = angular.copy(this.master);
-      alert('email donot match');
+      alert('email do not match');
       return;
     }
     authService.signup(user)
