@@ -35,7 +35,7 @@ function bizService($q, $log, $http, authService){
     return authService.getToken()
     .then( token => {
       headers.Authorization = `Bearer ${token}`;
-      return $http.post(baseUrl, headers);
+      return $http.get(baseUrl, headers);
     });
   };
 
