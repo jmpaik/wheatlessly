@@ -46,8 +46,8 @@ function headerController($log, $location, authService){
 
   }
 };
-
   }
+
   this.business = function(){
     $location.path('/create-biz');
   }
