@@ -1,17 +1,22 @@
 <section class="signup-form">
   <form
-  name="signupForm" novalidate>
+  name="signupForm">
 
   <input class="input-std"
   type="email"
   placeholder="email"
-  ng-model="signupCtrl.user.email">
+  ng-model="signupCtrl.user.email" required />
+
+  <input class="input-std"
+  type="email"
+  placeholder="re-enter email"
+  ng-model="signupCtrl.user.emailCopy" required />
 
   <input class="input-std"
   type="password"
   placeholder="password"
   ng-minlength="3"
-  ng-model="signupCtrl.user.password" required>
+  ng-model="signupCtrl.user.password" required />
 
   <button class="btn-std" ng-click="signupCtrl.signup(signupCtrl.user)">Join</button>
 </form>

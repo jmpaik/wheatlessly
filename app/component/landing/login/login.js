@@ -19,10 +19,12 @@ function LoginController($log, $location, authService) {
   });
   this.login = function(user) {
     $log.log('loginCtrl.login()');
+
+
     authService.login(user)
     .then( () => {
       $location.url('/home');
-      console.log('you are loggedin');
+      $log.log('you are loggedin');
     })
     .catch( err => {
       $log.err('failed login:', err);

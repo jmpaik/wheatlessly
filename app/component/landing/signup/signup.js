@@ -16,14 +16,20 @@ function SignupController($log, $location, authService) {
     $location.url('/home');
   });
 
-	this.signup = function(user) {
+  this.signup = function(user) {
     $log.debug('signupCtrl.signup()');
+
+    if(user.email !== user.emailCopy){
+      this.user = angular.copy(this.master);
+      alert('email donot match');
+      return;
+    }
     authService.signup(user)
     .then( () => {
       $location.url('/home');
     })
-		.catch( err => {
-			 $log.log('err= ', err);
-		});
+    .catch( err => {
+      $log.log('err= ', err);
+    });
   };
 }
