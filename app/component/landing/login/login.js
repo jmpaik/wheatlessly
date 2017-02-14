@@ -17,9 +17,9 @@ function LoginController($log, $location, authService) {
   .then( () => {
     $location.url('/home');
   });
-  this.login = function(user) {
+  this.login = function() {
     $log.log('loginCtrl.login()');
-    authService.login(user)
+    authService.login(this.user)
     .then( () => {
       $location.url('/home');
       console.log('you are loggedin');
