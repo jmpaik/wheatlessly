@@ -43,7 +43,7 @@ function headerController($log, $location, authService){
     this.showSignup = false;
     $location.path('/');
   };
-
+  
   this.business = function(){
     $location.path('/create-biz');
   };
