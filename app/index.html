@@ -1,19 +1,28 @@
 <!DOCTYPE html>
 <html ng-app="wheatlessly">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>wheatlessly</title>
-  </head>
-  <body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- FAVICON TAG -->
+  <link rel="shortcut icon" type="image/x-icon" href="assets/wheatlessly.ico">
+  <title>Wheatlessly</title>
+</head>
+<body>
+  <header></header>
+  <main>
+    <ui-view></ui-view>
+  </main>
 
-    	<header></header>
+  <footer>
+    <ul>
+      <li>About</li>
+      <li>|</li>
+      <li>Contact</li>
+      <li>|</li>
+      <li>Press</li>
+    </ul>
+    <li>Copyright &copy; 2015-2017 Wheatlessly Inc. Wheatlessly, and related marks are registered trademarks of Wheatlessly.</li>
+  </footer>
 
-    <main>
-      <ui-view></ui-view>
-    </main>
-
-    <footer></footer>
-
-  </body>
+</body>
 </html>
