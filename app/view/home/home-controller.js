@@ -1,6 +1,6 @@
 'use strict';
 
-require('./_home-edit.scss');
+require('./_home.scss');
 
 module.exports = ['$log', '$location', '$rootScope', 'authService', homeController];
 

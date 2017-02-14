@@ -4,12 +4,16 @@ require('./_create-biz.scss');
 
 module.exports = {
   template: require('./create-biz.html'),
-  controller: ['$log', 'bizService', CreateBizController],
+  controller: ['$log', 'authService', 'bizService', CreateBizController],
   controllerAs: 'createBizCtrl'
 };
 
-function CreateBizController($log, bizService) {
+function CreateBizController($log, authService, bizService) {
   $log.debug('CreateBizController');
+  this.showBiz = false;
+  authService.getToken().then( () => {
+    this.showBiz = true;
+  });
 
   this.biz = {};
 
