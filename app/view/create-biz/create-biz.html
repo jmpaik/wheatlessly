@@ -1,22 +1,22 @@
 <section class="create-form" ng-if="createBizCtrl.showBiz">
   <h3>Your Business Info</h3>
 
-  <form name="create-biz" class="" ng-submit="">
+  <form name="create-biz" ng-submit="">
 
   <fieldset>
     <input class="input-std"
     name="name"
     type="text"
     placeholder="Business Name"
-    ng-model="" required>
+    ng-model="biz.name" required>
   </fieldset>
 
   <fieldset>
     <input class="input-std"
-    name="ein"
+    name="EIN"
     type="text"
     placeholder="Federal Employer Identification Number"
-    ng-model="" required>
+    ng-model="biz.EIN" required>
   </fieldset>
 
   <fieldset>
@@ -24,7 +24,7 @@
     name="address"
     type="text"
     placeholder="Business Address"
-    ng-model="" required>
+    ng-model="biz.address" required>
   </fieldset>
 
   <fieldset>
@@ -32,7 +32,7 @@
     name="phone"
     type="tel"
     placeholder="Business Phone"
-    ng-model="" required>
+    ng-model="biz.phone" required>
   </fieldset>
 
   <fieldset>
@@ -40,10 +40,10 @@
     name="url"
     type="url"
     placeholder="Business URL Address"
-    ng-model="">
+    ng-model="biz.url">
   </fieldset>
 
-    <button class="btn-std" ng-click="">Save</button>
+    <button class="btn-std" ng-click="createBizCtrl.createBiz(createBizCtrl.biz)">Save</button>
     <button class="btn-std" ng-click="">Edit</button>
     <button class="btn-std" ng-click="">Log Out</button>
   </form>
