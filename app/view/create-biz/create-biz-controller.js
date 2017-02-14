@@ -9,7 +9,6 @@ function CreateBizController($log, $location, authService, bizService) {
   this.showBiz = false;
   authService.getToken().then( () => {
     this.showBiz = true;
-    
   });
 
   this.biz = {};

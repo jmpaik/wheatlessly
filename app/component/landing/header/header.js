@@ -43,5 +43,5 @@ function headerController($log, $location, authService){
     this.showSignup = false;
 
     $location.path('/');
-  }
-};
+  };
+}
