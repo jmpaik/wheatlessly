@@ -10,7 +10,7 @@
     "start": "node server.js",
     "heroku-postbuild": "webpack -p --progress",
     "build": "./node_modules/webpack/bin/webpack.js",
-    "build-watch": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot",
+    "build-watch": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot",
     "lint": "eslint entry.js app/**/*.js",
     "test": "./node_modules/karma/bin/karma start --single-run",
     "test-watch": "./node_modules/karma/bin/karma start"
