@@ -27,7 +27,7 @@ function LoginController($log, $location, authService) {
       $log.log('you are loggedin');
     })
     .catch( err => {
-      $log.err('failed login:', err);
+      $log.error('failed login:', err);
     });
   };
 }
