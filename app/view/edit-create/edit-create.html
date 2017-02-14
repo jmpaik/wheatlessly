@@ -1,0 +1,36 @@
+<section class="edit-create-form">
+  <h3>Your Business Info</h3>
+
+  <form name="edit-create" novalidate>
+
+  <input class="input-std"
+  type="Business Name"
+  placeholder="Business Name"
+  ng-model="">
+
+  <input class="input-std"
+  type="FEIN"
+  placeholder="Federal Employer Identification Number"
+  ng-minlength="9"
+  ng-model="" required>
+
+  <input class="input-std"
+  type="Business Address"
+  placeholder="Business Address"
+  ng-model="">
+
+  <input class="input-std"
+  type="Business Phone"
+  placeholder="Business Phone"
+  ng-model="">
+
+  <input class="input-std"
+  type="Business Website"
+  placeholder="Business URL Address"
+  ng-model="">
+
+  <button class="btn-std" ng-click="">Save</button>
+  <button class="btn-std" ng-click="">Edit</button>
+  <button class="btn-std" ng-click="">Log Out</button>
+</form>
+</section>
