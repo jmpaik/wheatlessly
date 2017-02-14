@@ -17,5 +17,4 @@ function bizDetailController($log, authService, bizService){
   .then( () => {
     this.biz = biz;
   });
-
 };
