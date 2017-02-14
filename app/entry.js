@@ -7,9 +7,10 @@ const angular = require('angular');
 const camelcase = require('camelcase');
 const pascalcase = require('pascalcase');
 const uiRouter = require('angular-ui-router');
-// const uiBootstrap = require('angular-ui-bootstrap');
+const uiBootstrap = require('angular-ui-bootstrap');
 const ngFileUpload = require('ng-file-upload');
 const ngAnimate = require('angular-animate');
+
 // const app = angular.module('wheatlessly', [uiRouter, ngFileUpload, ngAnimate, uiBootstrap]);
 const app = angular.module('wheatlessly', [uiRouter, ngFileUpload, ngAnimate]);
 
