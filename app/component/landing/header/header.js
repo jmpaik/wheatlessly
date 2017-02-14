@@ -16,7 +16,7 @@ function headerController($log, $location, authService){
   authService.getToken()
   .then( () => {
     this.loginDiv = true;
-    $location.path('/home');
+    $location.path('/create-biz');
     return this.loginDiv;
   });
 
@@ -43,5 +43,12 @@ function headerController($log, $location, authService){
     this.showSignup = false;
 
     $location.path('/');
-  };
-}
+
+  }
+};
+
+  }
+  this.business = function(){
+    $location.path('/create-biz');
+  }
+};
