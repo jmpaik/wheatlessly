@@ -4,30 +4,28 @@ require('./_login.scss');
 
 module.exports = {
   template: require('./login.html'),
-  controller: ['$log', '$location', 'authService', LoginController],
+  controller: ['$log', '$location', '$window', 'authService', LoginController],
   controllerAs: 'loginCtrl'
-};
+}
 
-function LoginController($log, $location, authService) {
+function LoginController($log, $location, $window, authService) {
   $log.debug('LoginController');
 
-  this.user = {};
 
-  authService.getToken()
-  .then( () => {
-    $location.url('/home');
-  });
   this.login = function(user) {
     $log.log('loginCtrl.login()');
 
 
     authService.login(user)
     .then( () => {
-      $location.url('/home');
+      $location.path('/home');
+      $window.location.reload();
       $log.log('you are loggedin');
+      return;
     })
     .catch( err => {
-      $log.err('failed login:', err);
+      alert('email or password is wrong!');
+      $log.error('failed login:', err);
     });
   };
 }

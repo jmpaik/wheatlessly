@@ -8,9 +8,23 @@ module.exports = {
   controllerAs: 'headerCtrl'
 };
 
-function headerController($log, $location){
+function headerController($log, $location, authService){
   $log.debug('headerController');
+  this.loginDiv = false;
 
+
+  authService.getToken()
+  .then( () => {
+    this.loginDiv = true;
+    $location.path('/home');
+    return this.loginDiv;
+  });
+
+  this.logout = function(){
+    this.loginDiv = false;
+    $location.url('/home');
+    authService.logout();
+  };
   this.showLoginPage = function(){
 
     $location.path('/home');
