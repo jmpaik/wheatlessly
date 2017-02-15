@@ -12,9 +12,9 @@ describe('Biz Service', function() {
   });
 
   describe('#createBiz', () => {
-    // it('should create a biz', () => {
-    //
-    // });
+    it('should create a biz', () => {
+
+    });
   });
 
   describe('#getBiz', () => {
@@ -23,6 +23,9 @@ describe('Biz Service', function() {
       this.$window.localStorage.setItem('token', token);
       let headers = {
         'Accept': 'application/json',
+        //NOTE: $http.get omits Content-Type internally.
+        //      so we need to leave it out of what's expected.
+        // 'Content-Type': 'application/json',
         'Authorization': `Bearer ${token}`
       };
       let exampleBiz = {
@@ -34,9 +37,15 @@ describe('Biz Service', function() {
       .respond(200, exampleBiz);
 
       this.bizService.getBiz()
-      .then( biz => {
-        expect(biz).to.deep.equal(exampleBiz);
+      .then( res => {
+        expect(res.status).toEqual(200);
+        let biz = res.data;
+        expect(biz.name).toEqual(exampleBiz.name);
+        expect(biz.EIN).toEqual(exampleBiz.EIN);
+        //TODO: Add more fields to check?
       });
+
+      this.$httpBackend.flush();
     });
   });
 
