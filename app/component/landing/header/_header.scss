@@ -1,29 +1,29 @@
 @import "../scss/lib/theme/vars";
 .header{
-	color: $font-color-white;
-	font-weight: bold;
-	height: 10vh;
-	width: 90%;
-	margin-left: 5%;
-	margin-top: $gutter-std / 2;
-	position: relative;
-	 button{
-		 font-size: 1em;
-		 background-color: inherit;
-		 font-weight: bold;
-		 color: $font-color-white;
-		 border: none;
-		 &:hover{
-			 border-radius: $border-std / 2;
-			 border: $border-std / 2 solid $font-color-white;
-		 }
-	 }
-	 div{
-		 display: inline;
-		 float: right;
-		 li{
-			 display: inline-block;
-			 font-size: 0.7em;
-		 }
-	 }
+  color: $font-color-white;
+  font-weight: bold;
+  height: 10vh;
+  width: 90%;
+  margin-left: 5%;
+  margin-top: $gutter-std / 2;
+  position: relative;
+  button{
+    font-size: 1em;
+    background-color: inherit;
+    font-weight: bold;
+    color: $font-color-white;
+    border: none;
+    &:hover{
+      border-radius: $border-std / 2;
+      border: $border-std / 2 solid $font-color-white;
+    }
+  }
+  div{
+    display: inline;
+    float: right;
+    li{
+      display: inline-block;
+      font-size: 0.7em;
+    }
+  }
 }

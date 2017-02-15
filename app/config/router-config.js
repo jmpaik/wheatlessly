@@ -23,6 +23,13 @@ function routerConfig($stateProvider, $urlRouterProvider) {
       controller: 'LandingController',
       controllerAs: 'landingCtrl'
     },
+    {
+      name: 'create-biz',
+      url: '/create-biz',
+      template: require('../view/create-biz/create-biz.html'),
+      controller: 'CreateBizController',
+      controllerAs: 'createBizCtrl'
+    }
   ];
 
   states.forEach( state => {
