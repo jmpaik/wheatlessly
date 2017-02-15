@@ -1,47 +1,46 @@
 <section class="create-form" ng-if="createBizCtrl.showBiz">
   <h3>Your Business Info</h3>
+  <biz-detail></biz-detail>
+  <form name="create-biz" ng-submit="">
+    <fieldset>
+      <input class="input-std"
+      name="name"
+      type="text"
+      placeholder="Business Name"
+      ng-model="createBizCtrl.biz.name" required/>
+    </fieldset>
 
-  <form name="create-biz"/>
+    <fieldset>
+      <input class="input-std"
+      name="EIN"
+      type="text"
+      placeholder="Federal Employer Identification Number"
+      ng-model="createBizCtrl.biz.EIN" required/>
+    </fieldset>
 
-  <fieldset>
-    <input class="input-std"
-    name="name"
-    type="text"
-    placeholder="Business Name"
-    ng-model="createBizCtrl.biz.name" required/>
-  </fieldset>
+    <fieldset>
+      <input class="input-std"
+      name="address"
+      type="text"
+      placeholder="Business Address"
+      ng-model="createBizCtrl.biz.address" required/>
+    </fieldset>
 
-  <fieldset>
-    <input class="input-std"
-    name="EIN"
-    type="text"
-    placeholder="Federal Employer Identification Number"
-    ng-model="createBizCtrl.biz.EIN" required/>
-  </fieldset>
+    <fieldset>
+      <input class="input-std"
+      name="phone"
+      type="tel"
+      placeholder="Business Phone"
+      ng-model="createBizCtrl.biz.phone" required/>
+    </fieldset>
 
-  <fieldset>
-    <input class="input-std"
-    name="address"
-    type="text"
-    placeholder="Business Address"
-    ng-model="createBizCtrl.biz.address" required/>
-  </fieldset>
-
-  <fieldset>
-    <input class="input-std"
-    name="phone"
-    type="tel"
-    placeholder="Business Phone"
-    ng-model="createBizCtrl.biz.phone" required/>
-  </fieldset>
-
-  <fieldset>
-    <input class="input-std"
-    name="url"
-    type="url"
-    placeholder="Business URL Address"
-    ng-model="createBizCtrl.biz.url"/>
-  </fieldset>
+    <fieldset>
+      <input class="input-std"
+      name="url"
+      type="url"
+      placeholder="Business URL Address"
+      ng-model="createBizCtrl.biz.url">
+    </fieldset>
 
   <button class="btn-std" ng-click="createBizCtrl.createBiz(createBizCtrl.biz)">Save</button>
   
