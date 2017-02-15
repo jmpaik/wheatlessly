@@ -26,7 +26,7 @@ function SignupController($log, $location, authService) {
     }
     authService.signup(user)
     .then( () => {
-      $location.url('/create-biz');
+      $location.url('/business');
     })
     .catch( err => {
       $log.log('err= ', err);
