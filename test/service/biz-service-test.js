@@ -12,9 +12,35 @@ describe('Biz Service', function() {
   });
 
   describe('#createBiz', () => {
-    // it('should create a biz', () => {
-    //
-    // });
+    it('should make a valid POST request', () => {
+      let token = 'some token';
+      this.$window.localStorage.setItem('token', token);
+      let headers = {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+      };
+      let testBiz = {
+        name: 'Test Biz',
+        EIN: '23-3456789'
+      };
+      this.$httpBackend.expectPOST(`${__API_URL__}/api/biz`, testBiz, headers)
+      .respond(204, {
+        _id: '1234abcd',
+        name: testBiz.name,
+        EIN: testBiz.EIN
+      });
+
+      this.bizService.createBiz(testBiz)
+      .then( biz => {
+        //NOTE: Checking biz with testBiz is probably
+        //      not necessary. Our goal is to test
+        //      that the service makes valid HTTP calls.
+        expect(biz.name).toEqual(testBiz.name);
+      });
+
+      this.$httpBackend.flush();
+    });
   });
 
   describe('#getBiz', () => {
@@ -23,6 +49,9 @@ describe('Biz Service', function() {
       this.$window.localStorage.setItem('token', token);
       let headers = {
         'Accept': 'application/json',
+        //NOTE: $http.get omits Content-Type internally.
+        //      so we need to leave it out of what's expected.
+        // 'Content-Type': 'application/json',
         'Authorization': `Bearer ${token}`
       };
       let exampleBiz = {
@@ -35,12 +64,66 @@ describe('Biz Service', function() {
 
       this.bizService.getBiz()
       .then( biz => {
-        expect(biz).to.deep.equal(exampleBiz);
+        expect(biz.name).toEqual(exampleBiz.name);
+        expect(biz.EIN).toEqual(exampleBiz.EIN);
+        //TODO: Add more fields to check?
       });
+
+      this.$httpBackend.flush();
+    });
+  });
+
+  describe('#updateBiz', () => {
+    it('should make a valid PUT request', () => {
+      let token = 'some token';
+      this.$window.localStorage.setItem('token', token);
+      let headers = {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+      };
+      let update = {
+        _id: '12345abcde',
+        name: 'Updated name',
+        address: '123 Fake St, Springfield, IL'
+      };
+      this.$httpBackend.expectPUT(`${__API_URL__}/api/biz/${update._id}`, update, headers)
+      .respond(202, update);
+
+      this.bizService.updateBiz(update)
+      .then( biz => {
+        expect(biz.name).toEqual(update.name);
+      });
+
+      this.$httpBackend.flush();
     });
   });
 
   describe('#findBizs', () => {
+    it('should make a valid GET search request', () => {
+      let headers = { 'Accept': 'application/json' };
+      let query = {
+        southwest: { lat: 47, lng: -122 },
+        northeast: { lat: 48, lng: -121 }
+      };
+      let queryStr = 'southwest=47%2C-122&northeast=48%2C-121';
+      let url = `${__API_URL__}/api/search?${queryStr}`;
 
+      this.$httpBackend.expectGET(url, headers)
+      .respond(200, [
+        { _id: 1, name: 'Biz1'},
+        { _id: 2, name: 'Biz2'},
+        { _id: 3, name: 'Biz3'},
+      ]);
+
+      this.bizService.findBizs(query)
+      .then( bizs => {
+        console.log(bizs);
+        expect(Array.isArray(bizs)).toEqual(true);
+        expect(bizs.length).toEqual(3);
+      });
+
+      this.$httpBackend.flush();
+    });
   });
 });
