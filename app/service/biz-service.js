@@ -80,7 +80,7 @@ function bizService($q, $log, $http, authService){
 
     return authService.getToken()
     .then( token => {
-      let url = baseUrl;
+      let url = `${baseUrl}/${biz._id}/pic`;
       headers.Authorization = `Bearer ${token}`;
 
       return $http.post(url, biz, headers);
