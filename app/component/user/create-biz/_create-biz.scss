@@ -1,0 +1,12 @@
+@import "../scss/lib/theme/vars";
+
+.create-biz{
+  form{
+    fieldset{
+      input{
+        display: inline-block;
+        width: 50%;
+      }
+    }
+  }
+}

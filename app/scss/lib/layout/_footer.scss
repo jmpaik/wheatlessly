@@ -1,16 +1,16 @@
 @import "../theme/vars";
 
 footer{
-	height: 10vh;
-	color: $font-color-white;
-	font-size: 0.5em;
-	text-align: center;
-	ul{
-		margin: $gutter-std / 5;
-		li{
-			display: inline-block;
-			font-size: 1.5em;
-			margin: 0 $gutter-std/5;
-		}
-	}
+  height: 10vh;
+  color: $font-color-white;
+  font-size: 0.5em;
+  text-align: center;
+  ul{
+    margin: $gutter-std / 5;
+    li{
+      display: inline-block;
+      font-size: 1.5em;
+      margin: 0 $gutter-std/5;
+    }
+  }
 }

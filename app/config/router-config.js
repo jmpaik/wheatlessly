@@ -24,11 +24,11 @@ function routerConfig($stateProvider, $urlRouterProvider) {
       controllerAs: 'landingCtrl'
     },
     {
-      name: 'create-biz',
-      url: '/create-biz',
-      template: require('../view/create-biz/create-biz.html'),
-      controller: 'CreateBizController',
-      controllerAs: 'createBizCtrl'
+      name: 'biz',
+      url: '/business',
+      template: require('../view/biz/biz.html'),
+      controller: 'BizController',
+      controllerAs: 'bizCtrl'
     }
   ];
 
