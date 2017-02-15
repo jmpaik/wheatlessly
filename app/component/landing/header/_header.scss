@@ -6,7 +6,6 @@
   font-weight: bold;
   height: 5vh;
   width: 100%;
-  // margin-left: 5%;
   margin-top: $gutter-std / 2;
   padding-top: 1%;
   position: relative;
@@ -24,6 +23,7 @@
   div{
     display: inline;
     float: right;
+    margin-right: 1%;
     li{
       display: inline-block;
       font-size: 0.7em;
