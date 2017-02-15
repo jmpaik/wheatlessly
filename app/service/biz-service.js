@@ -58,7 +58,7 @@ function bizService($q, $log, $http, authService){
   service.findBizs = function(query) {
     $log.debug('bizService.findBizs()', query);
 
-    let url = baseUrl;
+    let url = `${__API_URL__}/api/search`;
 
     let sw = `${query.southwest.lat},${query.southwest.lng}`;
     sw = encodeURIComponent(sw);

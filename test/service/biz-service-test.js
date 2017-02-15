@@ -105,6 +105,30 @@ describe('Biz Service', function() {
   });
 
   describe('#findBizs', () => {
+    it('should make a valid GET search request', () => {
+      let headers = { 'Accept': 'application/json' };
+      let query = {
+        southwest: { lat: 47, lng: -122 },
+        northeast: { lat: 48, lng: -121 }
+      };
+      let queryStr = 'southwest=47%2C-122&northeast=48%2C-121';
+      let url = `${__API_URL__}/api/search?${queryStr}`;
 
+      this.$httpBackend.expectGET(url, headers)
+      .respond(200, [
+        { _id: 1, name: 'Biz1'},
+        { _id: 2, name: 'Biz2'},
+        { _id: 3, name: 'Biz3'},
+      ]);
+
+      this.bizService.findBizs(query)
+      .then( res => {
+        console.log('test find biz res:',res);
+        // expect(res.status).toEqual(200);
+        // expect(res.data.length).toEqual(3);
+      });
+
+      this.$httpBackend.flush();
+    });
   });
 });
