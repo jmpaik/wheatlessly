@@ -13,7 +13,7 @@ function SignupController($log, $location, authService) {
 
   authService.getToken()
   .then( () => {
-    $location.url('/home');
+    $location.path('/business');
   });
 
   this.signup = function(user) {
@@ -24,12 +24,23 @@ function SignupController($log, $location, authService) {
       alert('email do not match');
       return;
     }
+    console.log(user);
     authService.signup(user)
     .then( () => {
-      $location.url('/business');
+      $window.location.reload();
+      $location.path('/business');
+      $log.log('you are signin');
+      return;
     })
     .catch( err => {
-      $log.log('err= ', err);
+      $log.log('err- ', err);
+      if(err.status == 500){
+        this.user = angular.copy(this.master);
+        return alert('Sorry this email already exist');
+      }
+      if(err.status == 400){
+        return alert('password length should be greater than 3');
+      }
     });
   };
 }

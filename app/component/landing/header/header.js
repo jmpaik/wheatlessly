@@ -15,10 +15,9 @@ function headerController($log, $location, authService){
 
   authService.getToken()
   .then( () => {
-    this.loginDiv = true;
     $location.path('/business');
-    return this.loginDiv;
-  });
+    return this.loginDiv = true;
+  }).catch( err => $log.log('You are not loggedin, Token not found'));
 
   this.logout = function(){
     this.loginDiv = false;
