@@ -13,9 +13,9 @@ function BizController($log, $location, authService, bizService) {
   });
 
   let defaultBiz = {
-    EIN: 'XX-XXXXXXX',
     name: 'Enter your Business name',
-    address: "Enter Address",
+    EIN: 'XX-XXXXXXX',
+    address: 'Enter Address',
     url: 'Business website',
     phone: 'xxx-xxx-xxxx'
   }

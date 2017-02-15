@@ -1,5 +1,4 @@
 <section class="bizDetail">
-  <h2>Business details</h2>
   <ul ng-hide="bizDetail.hideBizDetail">
     <li>Name: {{bizDetailCtrl.biz.name}}</li>
     <li>FEIN: {{bizDetailCtrl.biz.EIN}}</li>
@@ -7,7 +6,7 @@
     <li>Phone: {{bizDetailCtrl.biz.phone}}</li>
     <li>Business Website: {{bizDetailCtrl.biz.url}}</li>
   </ul>
-  <create-biz ng-hide="!bizDetail.hideBizDetail"></create-biz>
+  <edit-biz ng-if="bizDetail.hideBizDetail" biz="bizDetailCtrl.biz"></edit-biz>
   <button class="btn-std" ng-click="bizDetailCtrl.addPic()">Add Pic</button>
-  <button class="btn-std" ng-click="bizDetailCtrl.editBiz()">editBiz</button>
+  <button class="btn-std" ng-click="bizDetail.hideBizDetail=!bizDetail.hideBizDetail">editBiz</button>
 </section>

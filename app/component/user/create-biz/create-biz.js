@@ -11,10 +11,18 @@ function CreateBizController($log, $location, bizService) {
   $log.debug('CreateBizController');
 
   this.createBiz = function(biz) {
+    $log.log('createBizCtrl.createBiz()');
+
     bizService.createBiz(biz)
     .then( biz => {
-      this.biz = biz;
-      $location.reload();
+      $log.log('success', biz)
+      bizService.getBiz()
+      .then(biz => {
+        $log.log('success new biz- ', biz);
+      })
+      .catch( err => {
+        $log.error('Failure', err);
+      });
     })
     .catch( err => {
       $log.error('Failure', err);
