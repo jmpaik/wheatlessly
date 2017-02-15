@@ -1,0 +1,18 @@
+@import "../scss/lib/theme/vars";
+
+.bizDetail{
+  width: 100%;
+  background: rgba(8, 8, 7, 0.78);
+  color: $font-color-white;
+  font-size: 1em;
+  padding: $gutter-std / 2  $gutter-std;
+  h2{
+    text-align: center;
+  }
+  ul{
+    padding: $gutter-std / 2;
+  }
+  li{
+    padding: $gutter-std / 4;
+  }
+}

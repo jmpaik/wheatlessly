@@ -1,0 +1,30 @@
+<section class="header">
+  <button ng-click="headerCtrl.landing()">Explore</button>
+  <button ng-click="">Connect</button>
+  <button ng-click="">Inform</button>
+  <div ng-if="!headerCtrl.loginDiv">
+    <li>Are you a business with a gluten free menu?</li>
+    <button ng-click="headerCtrl.showSignupPage()">Join now</button>
+    <button ng-click="headerCtrl.showLoginPage()">Sign in</button>
+  </div>
+  <div ng-if="headerCtrl.loginDiv">
+    <button ng-click="headerCtrl.business()">Home</button>
+    <button ng-click="headerCtrl.logout()">Logout</button>
+  </div>
+</section>
+
+<section>
+  <div class="join-container"
+  ng-if="headerCtrl.showLogin">
+  <div class="join-inner">
+    <login></login>
+  </div>
+</div>
+
+<div class="join-container"
+ng-if="headerCtrl.showSignup">
+<div class="join-inner">
+  <signup></signup>
+</div>
+</div>
+</section>

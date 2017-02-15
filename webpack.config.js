@@ -7,7 +7,6 @@ const CleanPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 dotenv.load();
-
 const production = process.env.NODE_ENV === 'production';
 
 let plugins = [
@@ -19,13 +18,11 @@ let plugins = [
   })
 ];
 
-if (production) {
+if(production) {
   plugins = plugins.concat([
     new webpack.optimize.UglifyJsPlugin({
       mangle: true,
-      compress: {
-        warnings: false
-      },
+      compress: { warnings: false }
     }),
     new CleanPlugin()
   ]);
@@ -34,14 +31,12 @@ if (production) {
 module.exports = {
   entry: `${__dirname}/app/entry.js`,
   devtool: production ? false : 'eval',
-  plugins,
   output: {
     path: 'build',
     filename: 'bundle.js'
   },
-  sassLoader: {
-    includePaths: [`${__dirname}/app/scss/`]
-  },
+  plugins,
+  sassLoader: { includePaths: [`${__dirname}/app/scss`] },
   module: {
     loaders: [
       {
@@ -54,8 +49,8 @@ module.exports = {
         loader: 'html'
       },
       {
-        test: /\.(woff|tt|svg|eot).*/,
-        loader: 'url?limit=10000&name=image/[hash].[ext]'
+        test: /\.(woff|ttf|svg|eot).*/,
+        loader: 'url?limit=10000&name=font/[hash].[ext]'
       },
       {
         test: /\.(jpg|jpeg|svg|bmp|tiff|gif|png)$/,

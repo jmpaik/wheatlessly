@@ -5,8 +5,8 @@ module.exports = ['$stateProvider', '$urlRouterProvider', routerConfig];
 function routerConfig($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.when('' , '/landing');
   $urlRouterProvider.when('/' , '/landing');
-  // $urlRouterProvider.when('/signup' , '/join#signup');
-  // $urlRouterProvider.when('/login' , '/join#login');
+  $urlRouterProvider.when('/signup' , '/join#signup');
+  $urlRouterProvider.when('/login' , '/join#login');
 
   let states = [
     {
@@ -23,6 +23,13 @@ function routerConfig($stateProvider, $urlRouterProvider) {
       controller: 'LandingController',
       controllerAs: 'landingCtrl'
     },
+    {
+      name: 'biz',
+      url: '/business',
+      template: require('../view/biz/biz.html'),
+      controller: 'BizController',
+      controllerAs: 'bizCtrl'
+    }
   ];
 
   states.forEach( state => {

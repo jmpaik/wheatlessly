@@ -1,0 +1,32 @@
+@import "../theme/vars";
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  font-family: helvetica;
+  background: url('../assets/foodParkOptimized.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+li{
+  list-style: none;
+}
+
+.input-std{
+  display: block;
+  font-size: 1em;
+  padding: 0.2em 1em;
+  margin: $gutter-std / 2;
+}
+
+.btn-std{
+  border: none;
+  padding: 0.3em 1.5em;
+  background-color: $btn-search-color;
+  margin: $gutter-std / 2;
+  color: gray;
+}
