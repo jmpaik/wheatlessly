@@ -75,5 +75,17 @@ function bizService($q, $log, $http, authService){
     });
   };
 
+  service.getPics = function(biz){
+    $log.debug('bizService.getPics()');
+
+    return authService.getToken()
+    .then( token => {
+      let url = baseUrl;
+      headers.Authorization = `Bearer ${token}`;
+
+      return $http.post(url, biz, headers);
+    });
+  };
+
   return service;
 }
