@@ -14,7 +14,7 @@ function bizDetailController($log, authService, bizService){
   this.biz = {};
 
   bizService.getBiz()
-  .then( () => {
-    this.biz = biz;
+  .then( biz => {
+    return this.biz = biz;
   });
 };
