@@ -18,7 +18,7 @@ function LoginController($log, $location, $window, authService) {
 
     authService.login(user)
     .then( () => {
-      $location.path('/home');
+      $location.path('/create-biz');
       $window.location.reload();
       $log.log('you are loggedin');
       return;
