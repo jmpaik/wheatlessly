@@ -1,13 +1,13 @@
 @import "../scss/lib/theme/vars";
 
 .create-biz{
-  width: 100%;
+  width: 80%;
+  margin: $gutter-std;
   padding: $gutter-std / 2  $gutter-std;
   form{
     fieldset{
       input{
         display: inline-block;
-        width: 50%;
       }
     }
   }
