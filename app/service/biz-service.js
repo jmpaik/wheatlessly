@@ -4,10 +4,18 @@ module.exports = ['$q', '$log', '$http', 'authService', bizService];
 
 let baseUrl = `${__API_URL__}/api/biz`;
 
-let headers = {
-  Accept: 'application/json',
-  'Content-Type': 'application/json'
-};
+function makeConfig(token) {
+  let config = {
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    }
+  };
+  if(token) {
+    config.headers.Authorization = `Bearer ${token}`;
+  }
+  return config;
+}
 
 function bizService($q, $log, $http, authService){
   $log.debug('bizService()');
@@ -21,10 +29,11 @@ function bizService($q, $log, $http, authService){
 
     return authService.getToken()
     .then( token => {
-      let url = baseUrl;
-      headers.Authorization = `Bearer ${token}`;
-
-      return $http.post(url, biz, headers);
+      return $http.post(baseUrl, biz, makeConfig(token));
+    })
+    .then( res => {
+      //TODO: Look for error conditions and reject
+      return $q.resolve(res.data);
     });
   };
 
@@ -34,8 +43,11 @@ function bizService($q, $log, $http, authService){
 
     return authService.getToken()
     .then( token => {
-      headers.Authorization = `Bearer ${token}`;
-      return $http.get(baseUrl, headers);
+      return $http.get(baseUrl, makeConfig(token));
+    })
+    .then( res => {
+      //TODO: Look for error conditions and reject
+      return $q.resolve(res.data);
     });
   };
 
@@ -44,10 +56,12 @@ function bizService($q, $log, $http, authService){
 
     return authService.getToken()
     .then( token => {
-      let url = `baseUrl/${biz._id}`;
-      headers.Authorization = `Bearer ${token}`;
-
-      return $http.put(url, biz, headers);
+      let url = `${baseUrl}/${biz._id}`;
+      return $http.put(url, biz, makeConfig(token));
+    })
+    .then( res => {
+      //TODO: Look for error conditions and reject
+      return $q.resolve(res.data);
     });
   };
 
@@ -56,22 +70,21 @@ function bizService($q, $log, $http, authService){
   service.findBizs = function(query) {
     $log.debug('bizService.findBizs()', query);
 
-    return authService.getToken()
-    .then( token => {
-      let url = baseUrl;
-      headers.Authorization = `Bearer ${token}`;
-      let sw = `${query.southwest.lat},${query.southwest.lng}`;
-      sw = encodeURIComponent(sw);
-      let ne = `${query.northeast.lat},${query.northeast.lng}`;
-      ne = encodeURIComponent(ne);
+    let url = `${__API_URL__}/api/search`;
 
-      url += `?southwest=${sw}&northeast=${ne}`;
+    let sw = `${query.southwest.lat},${query.southwest.lng}`;
+    sw = encodeURIComponent(sw);
+    let ne = `${query.northeast.lat},${query.northeast.lng}`;
+    ne = encodeURIComponent(ne);
 
-      $log.debug('Fetching:',url);
-      return $http.get(url, headers)
-      .then( res => {
-        service.searchResults = res;
-      });
+    url += `?southwest=${sw}&northeast=${ne}`;
+
+    $log.debug('Fetching:',url);
+    return $http.get(url, makeConfig())
+    .then( res => {
+      //TODO: Look for error conditions and reject
+      service.searchResults = res.data;
+      return $q.resolve(res.data);
     });
   };
 
