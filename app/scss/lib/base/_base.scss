@@ -11,7 +11,9 @@ body {
   background: url('../assets/foodParkOptimized.jpg') no-repeat center center fixed;
   background-size: cover;
 }
-
+main{
+  margin-top: $gutter-std;
+}
 li{
   list-style: none;
 }
