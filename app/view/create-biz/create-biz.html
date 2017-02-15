@@ -1,9 +1,9 @@
 <section class="create-form" ng-if="createBizCtrl.showBiz">
-  <h3>Your Business Info</h3>
 
   <form name="create-biz"/>
 
   <fieldset>
+    <label for="name">Name:</label>
     <input class="input-std"
     name="name"
     type="text"
@@ -12,6 +12,7 @@
   </fieldset>
 
   <fieldset>
+    <label for="EIN">FEIN:</label>
     <input class="input-std"
     name="EIN"
     type="text"
@@ -20,6 +21,7 @@
   </fieldset>
 
   <fieldset>
+    <label for="address">Address:</label>
     <input class="input-std"
     name="address"
     type="text"
@@ -28,6 +30,7 @@
   </fieldset>
 
   <fieldset>
+    <label for="phone">Phone:</label>
     <input class="input-std"
     name="phone"
     type="tel"
@@ -36,6 +39,7 @@
   </fieldset>
 
   <fieldset>
+    <label for="url">Business Website:</label>
     <input class="input-std"
     name="url"
     type="url"
@@ -44,6 +48,6 @@
   </fieldset>
 
   <button class="btn-std" ng-click="createBizCtrl.createBiz(createBizCtrl.biz)">Save</button>
-  
+
   </form>
 </section>
