@@ -12,8 +12,36 @@ describe('Biz Service', function() {
   });
 
   describe('#createBiz', () => {
-    it('should create a biz', () => {
+    it('should make a valid POST request', () => {
+      let token = 'some token';
+      this.$window.localStorage.setItem('token', token);
+      let headers = {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+      };
+      let testBiz = {
+        name: 'Test Biz',
+        EIN: '23-3456789'
+      };
+      this.$httpBackend.expectPOST(`${__API_URL__}/api/biz`, testBiz, headers)
+      .respond(204, {
+        _id: '1234abcd',
+        name: testBiz.name,
+        EIN: testBiz.EIN
+      });
 
+      this.bizService.createBiz(testBiz)
+      .then( res => {
+        expect(res.status).toEqual(204);
+        let biz = res.data;
+        //NOTE: Checking biz with testBiz is probably
+        //      not necessary. Our goal is to test
+        //      that the service makes valid HTTP calls.
+        expect(biz.name).toEqual(testBiz.name);
+      });
+
+      this.$httpBackend.flush();
     });
   });
 
