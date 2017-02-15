@@ -48,7 +48,7 @@ function bizService($q, $log, $http, authService){
 
     return authService.getToken()
     .then( token => {
-      let url = `baseUrl/${biz._id}`;
+      let url = `${baseUrl}/${biz._id}`;
       return $http.put(url, biz, makeConfig(token));
     });
   };

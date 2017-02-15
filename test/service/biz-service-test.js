@@ -77,6 +77,33 @@ describe('Biz Service', function() {
     });
   });
 
+  describe('#updateBiz', () => {
+    it('should make a valid PUT request', () => {
+      let token = 'some token';
+      this.$window.localStorage.setItem('token', token);
+      let headers = {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+      };
+      let update = {
+        _id: '12345abcde',
+        name: 'Updated name',
+        address: '123 Fake St, Springfield, IL'
+      };
+      this.$httpBackend.expectPUT(`${__API_URL__}/api/biz/${update._id}`, update, headers)
+      .respond(202, update);
+
+      this.bizService.updateBiz(update)
+      .then( res => {
+        expect(res.status).toEqual(202);
+        expect(res.data.name).toEqual(update.name);
+      });
+
+      this.$httpBackend.flush();
+    });
+  });
+
   describe('#findBizs', () => {
 
   });
