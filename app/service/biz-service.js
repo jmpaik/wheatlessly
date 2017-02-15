@@ -30,6 +30,10 @@ function bizService($q, $log, $http, authService){
     return authService.getToken()
     .then( token => {
       return $http.post(baseUrl, biz, makeConfig(token));
+    })
+    .then( res => {
+      //TODO: Look for error conditions and reject
+      return $q.resolve(res.data);
     });
   };
 
@@ -40,6 +44,10 @@ function bizService($q, $log, $http, authService){
     return authService.getToken()
     .then( token => {
       return $http.get(baseUrl, makeConfig(token));
+    })
+    .then( res => {
+      //TODO: Look for error conditions and reject
+      return $q.resolve(res.data);
     });
   };
 
@@ -50,6 +58,10 @@ function bizService($q, $log, $http, authService){
     .then( token => {
       let url = `${baseUrl}/${biz._id}`;
       return $http.put(url, biz, makeConfig(token));
+    })
+    .then( res => {
+      //TODO: Look for error conditions and reject
+      return $q.resolve(res.data);
     });
   };
 
@@ -70,9 +82,9 @@ function bizService($q, $log, $http, authService){
     $log.debug('Fetching:',url);
     return $http.get(url, makeConfig())
     .then( res => {
-      service.searchResults = res;
-      //TODO: Either need to return Promise.resolve(res),
-      //or notify some kind of refresh.
+      //TODO: Look for error conditions and reject
+      service.searchResults = res.data;
+      return $q.resolve(res.data);
     });
   };
 

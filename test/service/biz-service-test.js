@@ -32,9 +32,7 @@ describe('Biz Service', function() {
       });
 
       this.bizService.createBiz(testBiz)
-      .then( res => {
-        expect(res.status).toEqual(204);
-        let biz = res.data;
+      .then( biz => {
         //NOTE: Checking biz with testBiz is probably
         //      not necessary. Our goal is to test
         //      that the service makes valid HTTP calls.
@@ -65,9 +63,7 @@ describe('Biz Service', function() {
       .respond(200, exampleBiz);
 
       this.bizService.getBiz()
-      .then( res => {
-        expect(res.status).toEqual(200);
-        let biz = res.data;
+      .then( biz => {
         expect(biz.name).toEqual(exampleBiz.name);
         expect(biz.EIN).toEqual(exampleBiz.EIN);
         //TODO: Add more fields to check?
@@ -95,9 +91,8 @@ describe('Biz Service', function() {
       .respond(202, update);
 
       this.bizService.updateBiz(update)
-      .then( res => {
-        expect(res.status).toEqual(202);
-        expect(res.data.name).toEqual(update.name);
+      .then( biz => {
+        expect(biz.name).toEqual(update.name);
       });
 
       this.$httpBackend.flush();
@@ -122,10 +117,10 @@ describe('Biz Service', function() {
       ]);
 
       this.bizService.findBizs(query)
-      .then( res => {
-        console.log('test find biz res:',res);
-        // expect(res.status).toEqual(200);
-        // expect(res.data.length).toEqual(3);
+      .then( bizs => {
+        console.log(bizs);
+        expect(Array.isArray(bizs)).toEqual(true);
+        expect(bizs.length).toEqual(3);
       });
 
       this.$httpBackend.flush();
