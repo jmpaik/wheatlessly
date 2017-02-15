@@ -2,13 +2,12 @@
   <h3>Your Business Info</h3>
   <biz-detail></biz-detail>
   <form name="create-biz" ng-submit="">
-
   <fieldset>
     <input class="input-std"
     name="name"
     type="text"
     placeholder="Business Name"
-    ng-model="biz.name" required>
+    ng-model="createBizCtrl.biz.name" required/>
   </fieldset>
 
   <fieldset>
@@ -16,7 +15,7 @@
     name="EIN"
     type="text"
     placeholder="Federal Employer Identification Number"
-    ng-model="biz.EIN" required>
+    ng-model="createBizCtrl.biz.EIN" required/>
   </fieldset>
 
   <fieldset>
@@ -24,7 +23,7 @@
     name="address"
     type="text"
     placeholder="Business Address"
-    ng-model="biz.address" required>
+    ng-model="createBizCtrl.biz.address" required/>
   </fieldset>
 
   <fieldset>
@@ -32,7 +31,7 @@
     name="phone"
     type="tel"
     placeholder="Business Phone"
-    ng-model="biz.phone" required>
+    ng-model="createBizCtrl.biz.phone" required/>
   </fieldset>
 
   <fieldset>
@@ -40,7 +39,7 @@
     name="url"
     type="url"
     placeholder="Business URL Address"
-    ng-model="biz.url">
+    ng-model="createBizCtrl.biz.url"/>
   </fieldset>
   <form name="create-biz" class="" ng-submit="">
 
