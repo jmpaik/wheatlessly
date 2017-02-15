@@ -6,7 +6,7 @@
   position: relative;
 
   h2{
-    font-size: 9vw;
+    font-size: 8vw;
     color: $font-color-white;
     font-weight: bold;
     margin-bottom: 2%;
@@ -14,10 +14,10 @@
   form{
     position: absolute;
     top: 30%;
-    left: 23%;
+    left: 27%;
 
     input[type='text']{
-      width: 40vw;
+      width: 36vw;
       padding: $gutter-std / 4 $gutter-std / 2;
       color: $font-color-tin;
       border: none;
@@ -28,8 +28,8 @@
     button{
       display: inline;
       border: none;
-      width: 5vw;
-      height: 1.45em;
+      width: 2vw;
+      height: 2vw;
       margin-top: $gutter-std / 4;
       vertical-align: bottom;
       background-color: $btn-search-color;
