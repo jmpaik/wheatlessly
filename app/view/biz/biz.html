@@ -1,6 +1,6 @@
 <section class="biz" ng-if="bizCtrl.showBiz">
-  <li class="btn-std">create new Busines</li>
-  <create-biz></create-biz>
+  <h2 ng-click="bizCtrl.show=!bizCtrl.show">create new Busines</h2>
+  <create-biz ng-if="bizCtrl.show"></create-biz>
   <h2>Business details</h2>
   <biz-detail ng-repeat="item in bizCtrl.biz" biz="item" hideBizDetail='bizCtrl.hideBizDetail'></biz-detail>
 </section>

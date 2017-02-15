@@ -7,7 +7,9 @@
   background: rgba(8, 8, 7, 0.78);
   color: $font-color-white;
   font-size: 1em;
+  padding: $gutter-std 0;
   h2{
+    margin: $gutter-std;
     text-align: center;
   }
 }

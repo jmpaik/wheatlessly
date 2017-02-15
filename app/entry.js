@@ -34,7 +34,6 @@ context.keys().forEach( key => {
   let name = camelcase(path.basename(key, '.js'));
   let module = context(key);
   app.component(name, module);
-  console.log('name== ', name);
 });
 
 // context = require.context('./directive/', true, /\.js$/);
