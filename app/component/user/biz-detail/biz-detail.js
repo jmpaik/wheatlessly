@@ -14,21 +14,13 @@ module.exports = {
 
 function bizDetailController($log, bizService, picService){
   $log.debug('bizDetailController');
-
+  this.hideEdit = false;
   this.addPic = function(){
     picService.addPic()
     .then( pic => {
       $log.log('pic upload');
     })
     .catch( err => {
-      $log.error('Failure', err);
-    });
-  };
-  this.editBiz = function(){
-    bizService.updateBiz(biz)
-    .then( biz => {
-      $log.log('success: ', biz);
-    }).catch( err => {
       $log.error('Failure', err);
     });
   };
