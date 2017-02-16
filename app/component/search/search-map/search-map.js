@@ -7,7 +7,7 @@ module.exports = {
   controller: ['$log', 'bizService', SearchMapController],
   controllerAs: 'searchMapCtrl',
   bindings: {
-    onMapChange: '&' //TODO: Is this necessary?
+    onSearch: '&'
   }
 };
 
@@ -24,6 +24,7 @@ function SearchMapController($log, bizService) {
     // map.panToBounds(place.geometry.viewport);
     map.setCenter(place.geometry.location);
     map.setZoom(10);
+    this.onSearch();
   });
   map.addListener('zoom_changed', mapChanged);
   map.addListener('dragend', mapChanged);
