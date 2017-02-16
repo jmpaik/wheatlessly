@@ -2,7 +2,8 @@
   "globals": {
     "__DEBUG__": false,
     "__API_URL__": false,
-    "angular": true
+    "angular": true,
+    "google": true
   },
   "rules": {
     "no-console": "off",
