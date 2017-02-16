@@ -14,19 +14,20 @@
     position: absolute;
   }
   .search-bar {
-    width: 36vw;
+    width: 66%;
+    max-width: 255px;
     position: absolute;
   }
 
   .cover {
     h2 {
       font-size: 3em;
-      top: 30%;
+      top: 41%;
       left: 50%;
       transform: translateX(-50%);
     }
     .search-bar {
-      top: 42%;
+      top: 52%;
       left: 48%;
       transform: translateX(-50%);
     }
