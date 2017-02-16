@@ -36,10 +36,10 @@
   clear: both;
 }
 
-@media screen and (min-width:250px) and (max-width: 500px){
+@media screen and (min-width:250px) and (max-width: 666px){
   .header{
     height: 6vh;
-    padding-top: 3%;
+    // padding-top: 3%;
     width: 100%;
     position: relative;
     div{
@@ -56,10 +56,10 @@
     margin-left: 2%;
   }
 }
-@media screen and (min-width:500px) and (max-width: 800px){
+@media screen and (min-width:666px) and (max-width: 800px){
   .header{
     height: 6vh;
-    padding-top: 3%;
+    // padding-top: 3%;
     width: 100%;
     position: relative;
     div{
