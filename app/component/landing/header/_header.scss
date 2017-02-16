@@ -1,0 +1,38 @@
+@import "../scss/lib/theme/vars";
+.header{
+  background: rgba(8, 8, 7, 0.78);
+  color: $font-color-white;
+  text-align: left;
+  font-weight: bold;
+  height: 5vh;
+  width: 100%;
+  padding-top: 1%;
+  position: relative;
+  button{
+    font-size: 1em;
+    background-color: inherit;
+    font-weight: bold;
+    color: $font-color-white;
+    border: none;
+
+    &:hover{
+      border-radius: $border-std / 2;
+      border: $border-std / 2 solid $font-color-white;
+
+    }
+  }
+  .left-nav{
+    float: left;
+    margin-left: 1%;
+  }
+  div{
+    display: inline;
+    float: right;
+    margin-right: 1%;
+    li{
+      display: inline-block;
+      font-size: 0.7em;
+    }
+  }
+  clear: both;
+}
