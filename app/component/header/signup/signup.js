@@ -19,7 +19,6 @@ function SignupController($log, $window, $location, authService) {
     }
     authService.signup(user)
     .then( () => {
-      $window.location.reload();
       $location.path('/business');
       $log.log('you are signin');
       return;

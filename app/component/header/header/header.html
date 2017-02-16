@@ -1,8 +1,8 @@
 <section class="header">
   <div class="left-nav">
-  <button ng-click="headerCtrl.landing()">Explore</button>
-  <button id="connect" ng-click="">Connect</button>
-  <button id="inform" ng-click="">Inform</button>
+    <button ng-click="headerCtrl.landing()">Explore</button>
+    <button id="connect" ng-click="">Connect</button>
+    <button id="inform" ng-click="">Inform</button>
   </div>
 
   <div ng-if="!headerCtrl.loginDiv">
@@ -14,20 +14,4 @@
     <button ng-click="headerCtrl.business()">Account</button>
     <button ng-click="headerCtrl.logout()">Logout</button>
   </div>
-</section>
-
-<section>
-  <div class="join-container"
-  ng-if="headerCtrl.showLogin">
-  <div class="join-inner">
-    <login></login>
-  </div>
-</div>
-
-<div class="join-container"
-ng-if="headerCtrl.showSignup">
-<div class="join-inner">
-  <signup></signup>
-</div>
-</div>
 </section>
