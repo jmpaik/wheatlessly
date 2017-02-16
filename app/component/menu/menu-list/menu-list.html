@@ -4,4 +4,19 @@
     <img ng-repeat="pic in menuListCtrl.pics" class="menu-pic" src="{{pic}}"></img>
   </div>
   <button class="btn-std" ng-click="menuListCtrl.updatePics()">MAKE SOMETHING HAPPEN</button>
+
+  <form novalidate>
+    <div>
+      <button class="grab-img"
+        ngf-select
+        ng-model="menuListCtrl.pic.file">
+        select a pic to upload
+      </button>
+      <fieldset>
+        <input class="input-std" type="text" ng-model="menuListCtrl.pic.title" placeholder="name">
+      </fieldset>
+
+      <button ng-click="menuListCtrl.upload()" class="btn-std">upload</button>
+    </div>
+  </form>
 </section>

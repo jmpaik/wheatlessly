@@ -1,8 +1,6 @@
 'use strict';
 
-const authService = require('./auth-service.js');
-
-module.exports = ['$q', '$log', '$http', picService];
+module.exports = ['$q', '$log', '$http', 'Upload', 'authService', picService];
 
 //For reference:
 // module.exports = mongoose.model('pic', mongoose.Schema({
@@ -13,7 +11,7 @@ module.exports = ['$q', '$log', '$http', picService];
 //   created: { type: Date, default: Date.now }
 // }));
 
-function picService($q, $log, $http) {
+function picService($q, $log, $http, Upload, authService) {
 
   $log.debug('pic service');
 
@@ -81,10 +79,42 @@ function picService($q, $log, $http) {
         Accept: 'application/json'
       }
     };
+
     return $http.get(url, config)
     .then( res => {
       service.pics = res.data;
       return service.pics;
+    })
+    .catch( err => {
+      $log.error(err.message);
+      return $q.reject(err);
+    });
+  };
+
+  service.uploadPic = function(biz, picData) {
+    $log.debug('uploadPic');
+
+    return authService.getToken()
+    .then( token => {
+      let url = `${__API_URL__}/api/biz/${biz._id}/pic`;
+      let headers = {
+        Authorization: `Bearer ${token}`,
+        Accept: 'application/json'
+      };
+
+      return Upload.upload({
+        url,
+        headers,
+        method: 'POST',
+        data: {
+          image: picData.file
+          //file: picData.file
+        }
+      });
+    })
+    .then( res => {
+      console.log('uploadPic res:', res.data);
+      return res.data;
     })
     .catch( err => {
       $log.error(err.message);

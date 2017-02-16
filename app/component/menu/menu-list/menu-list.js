@@ -14,6 +14,18 @@ module.exports = {
 function menuListController($log, $location, bizService, picService) {
   $log.debug('menuListController');
 
+  this.pic = {};
+  this.pics = {};
+
+  this.upload = function() {
+    console.log('menuListController.upload()');
+
+    picService.uploadPic(this.biz, this.pic)
+    .then( res => {
+      this.updatePics();
+    });
+  };
+
   this.updatePics = function() {
     console.log('updatePics');
     picService.getPics(this.biz._id)
