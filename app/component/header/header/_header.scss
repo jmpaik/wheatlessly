@@ -19,7 +19,7 @@
     }
   }
   button:first-child{
-    margin-left: 5%;
+    margin-left: $gutter-std;
   }
   div{
     display: inline;
@@ -46,11 +46,11 @@
 }
 @media screen and (min-width:500px) and (max-width: 800px){
   .header{
-    padding: $gutter-std;
+    padding-top: $gutter-std;
     div{
       width: 30%;
     }
-    #inform, div li{
+    #connect, div li{
       display: none;
     }
   }
@@ -59,7 +59,7 @@
   .header{
     padding-top: $gutter-std;
     div{
-      min-width: 20%;
+      // min-width: 20%;
       margin-right: $gutter-std;
       li{
         display: inline-block;
