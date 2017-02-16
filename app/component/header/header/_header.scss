@@ -13,9 +13,11 @@
     font-weight: bold;
     color: $font-color-white;
     border: none;
+    outline-style: none;
     &:hover{
-      border-radius: $border-std / 2;
-      border: $border-std / 2 solid $font-color-white;
+      outline-style: solid;
+      outline-color: $font-color-white;
+      outline-width: thin;
     }
   }
   .left-nav{
@@ -34,10 +36,9 @@
   clear: both;
 }
 
-@media screen and (min-width:250px) and (max-width: 500px){
+@media screen and (max-width: 666px){
   .header{
     height: 6vh;
-    padding-top: 3%;
     width: 100%;
     position: relative;
     div{
@@ -54,10 +55,9 @@
     margin-left: 2%;
   }
 }
-@media screen and (min-width:500px) and (max-width: 800px){
+@media screen and (min-width:666px) and (max-width: 800px){
   .header{
     height: 6vh;
-    padding-top: 3%;
     width: 100%;
     position: relative;
     div{

@@ -14,19 +14,20 @@
     position: absolute;
   }
   .search-bar {
-    width: 36vw;
+    width: 66%;
+    max-width: 255px;
     position: absolute;
   }
 
   .cover {
     h2 {
-      font-size: 8vw;
-      top: 30%;
+      font-size: 3em;
+      top: 41%;
       left: 50%;
       transform: translateX(-50%);
     }
     .search-bar {
-      top: 42%;
+      top: 52%;
       left: 48%;
       transform: translateX(-50%);
     }
@@ -41,12 +42,13 @@
     h2 {
       top: $gutter-std / 4;
       left: 5%;
-      font-size: 4vw;
+      font-size: 1.5em;
       transform: none;
     }
     .search-bar {
       top: $gutter-std / 3;
       right: 7%;
+      width: 43%;
     }
     .map-container {
       width: 90%;
