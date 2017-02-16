@@ -16,6 +16,15 @@ function SearchMapController($log, bizService) {
 
   // eslint-disable-next-line
   let map = new google.maps.Map(document.getElementById('map'));
+  // eslint-disable-next-line
+  let searchBox = new google.maps.places.SearchBox(document.getElementById('search-box'));
+  searchBox.addListener('places_changed', () => {
+    let place = searchBox.getPlaces()[0];
+    $log.debug('place changed:', place);
+    // map.panToBounds(place.geometry.viewport);
+    map.setCenter(place.geometry.location);
+    map.setZoom(10);
+  });
   map.addListener('zoom_changed', mapChanged);
   map.addListener('dragend', mapChanged);
 
@@ -65,12 +74,14 @@ function SearchMapController($log, bizService) {
 
   }
 
-  this.setCenter = function(geo) {
-    $log.debug('searchMapCtrl.setCenter()', geo);
-    map.setCenter(geo);
-    map.setZoom(12);
-  };
+  // this.setCenter = function(geo) {
+  //   $log.debug('searchMapCtrl.setCenter()', geo);
+  //   map.setCenter(geo);
+  //   map.setZoom(12);
+  // };
 
   //Init center on CodeFellows.
-  this.setCenter({ lat: 47.618217, lng: -122.351832 });
+  // this.setCenter();
+  map.setCenter({ lat: 47.618217, lng: -122.351832 });
+  map.setZoom(10);
 }
