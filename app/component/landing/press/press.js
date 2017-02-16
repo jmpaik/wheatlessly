@@ -7,3 +7,7 @@ module.exports = {
   controller: ['$log', '$location',PressController],
   controllerAs: 'pressCtrl'
 }
+
+function PressController($log, $location){
+  $log.log('PressController');
+}

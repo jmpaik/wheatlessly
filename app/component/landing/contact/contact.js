@@ -7,3 +7,7 @@ module.exports = {
   controller: ['$log', '$location', ContactController],
   controllerAs: 'contactCtrl'
 }
+
+function ContactController($log, $location){
+  $log.log('ContactController()');
+}
