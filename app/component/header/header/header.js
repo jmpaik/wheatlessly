@@ -21,7 +21,7 @@ function headerController($log, $location, authService){
 
   this.logout = function(){
     this.loginDiv = false;
-    $location.url('/home');
+    $location.url('/landing');
     authService.logout();
   };
   this.showLoginPage = function(){

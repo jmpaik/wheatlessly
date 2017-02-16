@@ -6,7 +6,6 @@
   font-weight: bold;
   height: 5vh;
   width: 100%;
-  margin-top: $gutter-std / 2;
   padding-top: 1%;
   position: relative;
   button{
@@ -15,10 +14,16 @@
     font-weight: bold;
     color: $font-color-white;
     border: none;
+
     &:hover{
       border-radius: $border-std / 2;
       border: $border-std / 2 solid $font-color-white;
+
     }
+  }
+  .left-nav{
+    float: left;
+    margin-left: 1%;
   }
   div{
     display: inline;

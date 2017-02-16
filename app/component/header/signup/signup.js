@@ -11,11 +11,6 @@ module.exports = {
 function SignupController($log, $location, authService) {
   $log.debug('signupController');
 
-  authService.getToken()
-  .then( () => {
-    $location.path('/business');
-  });
-
   this.signup = function(user) {
     $log.debug('signupCtrl.signup()');
 

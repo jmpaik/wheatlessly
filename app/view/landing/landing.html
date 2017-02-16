@@ -1,12 +1,17 @@
 <section class="landing">
-  <form class="search">
+  <form class="search"
+  ng-class="landingCtrl.searchMode">
     <h2>Wheatlessly</h2>
-    <input class="search"
-    id="search-box"
-    type="text"
-    placeholder="Find gluten free food near you (e.g. 111 Fake St Anywhere, State 11111)"
-    required>
-    <button type="submit"></button>
-    <search-map></search-map>
+    <div class="search-bar">
+      <input class="search-box"
+      id="search-box"
+      type="text"
+      placeholder="Find gluten free food near you"
+      required>
+    </div>
+    <div class="map-container">
+      <search-map on-search="landingCtrl.searchMode = 'searching'">
+      </search-map>
+    </div>
   </form>
 </section>
