@@ -9,13 +9,13 @@
   font-size: 1em;
   padding: $gutter-std 0;
   h2{
-    margin: $gutter-std;
+    margin: $gutter-std $gutter-std 0 $gutter-std;
     text-align: center;
   }
   div{
     height: 70%;
-    width: 90%;
+    width: 89.6%;
     margin-left:  5%;
-    border: 1px $font-color-white solid;
+    border: 1px $btn-search-color solid;
   }
 }
