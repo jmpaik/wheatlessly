@@ -17,5 +17,11 @@
     width: 89.6%;
     margin-left:  5%;
     border: 1px $btn-search-color solid;
+    position: relative;
+    .cancel{
+      position: absolute;
+      top: 34.4vh;
+      left: 17.3vw;
+    }
   }
 }
