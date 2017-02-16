@@ -7,6 +7,8 @@ module.exports = ['$log', '$location', '$rootScope', 'authService', landingContr
 function landingController($log, $location){
   $log.debug('landingController');
 
+  this.searchMode = 'cover';
+
   let url = $location.url();
   this.showHome = url === '' || '/landing' || '/';
 }
