@@ -72,17 +72,7 @@ function SearchMapController($log, bizService) {
         });
       });
     });
-
   }
-
-  // this.setCenter = function(geo) {
-  //   $log.debug('searchMapCtrl.setCenter()', geo);
-  //   map.setCenter(geo);
-  //   map.setZoom(12);
-  // };
-
-  //Init center on CodeFellows.
-  // this.setCenter();
-  map.setCenter({ lat: 47.618217, lng: -122.351832 });
-  map.setZoom(10);
+  // map.setCenter({ lat: 47.618217, lng: -122.351832 });
+  // map.setZoom(10);
 }
