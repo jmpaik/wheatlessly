@@ -14,8 +14,9 @@
     color: $font-color-white;
     border: none;
     &:hover{
-      border-radius: $border-std / 2;
-      border: $border-std / 2 solid $font-color-white;
+      outline-style: solid;
+      outline-color: $font-color-white;
+      outline-width: thin;
     }
   }
   .left-nav{
