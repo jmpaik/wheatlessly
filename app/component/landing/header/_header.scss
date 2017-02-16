@@ -2,7 +2,6 @@
 .header{
   background: rgba(8, 8, 7, 0.78);
   color: $font-color-white;
-  text-align: left;
   font-weight: bold;
   height: 5vh;
   width: 100%;
@@ -19,6 +18,9 @@
       border: $border-std / 2 solid $font-color-white;
     }
   }
+  button:first-child{
+    margin-left: 5%;
+  }
   div{
     display: inline;
     float: right;
@@ -30,17 +32,37 @@
   }
   clear: both;
 }
-@media screen and (min-width:250px) and (max-width: 800px){
+
+@media screen and (min-width:250px) and (max-width: 500px){
   .header{
-    padding-top: $gutter-std;
+    padding: $gutter-std;
+    div{
+      width: 50%;
+    }
     #connect, #inform, div li{
       display: none;
     }
+  }
+}
+@media screen and (min-width:500px) and (max-width: 800px){
+  .header{
+    padding: $gutter-std;
     div{
-      margin-right: 3%;
+      width: 30%;
     }
-    button:first-child{
-      margin-left: 5%;
+    #inform, div li{
+      display: none;
+    }
+  }
+}
+@media screen and (min-width:800px){
+  .header{
+    padding-top: $gutter-std;
+    div{
+      margin-right: $gutter-std;
+      li{
+        display: inline-block;
+      }
     }
   }
 }
