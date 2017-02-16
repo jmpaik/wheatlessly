@@ -3,9 +3,9 @@
   background: rgba(8, 8, 7, 0.78);
   color: $font-color-white;
   font-weight: bold;
-  height: 5vh;
+  height: 6vh;
   width: 100%;
-  padding: $gutter-std / 4;
+  padding-top: 1%;
   position: relative;
   button{
     font-size: 1em;
@@ -18,13 +18,14 @@
       border: $border-std / 2 solid $font-color-white;
     }
   }
-  button:first-child{
-    margin-left: $gutter-std;
+  .left-nav{
+    float: left;
+    margin-left: 2%;
   }
   div{
     display: inline;
     float: right;
-    margin-right: 1%;
+    margin-right: 2%;
     li{
       display: inline-block;
       font-size: 0.7em;
@@ -33,50 +34,52 @@
   clear: both;
 }
 
-@media screen and (min-width: 200px) and (max-width: 500px){
+@media screen and (min-width:250px) and (max-width: 500px){
   .header{
+    height: 6vh;
+    padding-top: 3%;
     width: 100%;
-    padding: $gutter-std;
+    position: relative;
     div{
-      width: 50%;
+      display: inline;
+      float: right;
+      margin-right: 2%;
     }
     #connect, #inform, div li{
       display: none;
     }
-    @media screen and (min-width: 300px){
-      div{
-        width: 35%;
-        margin-right: 8%;
-      }
-    }
-    @media screen and (min-width: 350px){
-      div{
-        width: 35%;
-      }
-    }
+  }
+  .left-nav{
+    float: left;
+    margin-left: 2%;
   }
 }
 @media screen and (min-width:500px) and (max-width: 800px){
   .header{
-    padding: $gutter-std / 2 0;
+    height: 6vh;
+    padding-top: 3%;
+    width: 100%;
+    position: relative;
     div{
-      width: 30%;
-      margin-right: $gutter-std;
+      display: inline;
+      float: right;
+      margin-right: 2%;
     }
-    #connect, div li{
-      display: none;
+    .left-nav{
+      float: left;
+      margin-left: 2%;
     }
   }
 }
-@media screen and (min-width:800px){
-  .header{
-    padding-top: $gutter-std;
-    div{
-      width: auto;
-      margin-right: 10%;
-      li{
-        display: inline-block;
-      }
-    }
-  }
-}
+// @media screen and (min-width:800px){
+//   .header{
+//     // padding-top: $gutter-std;
+//     div{
+//       // min-width: 20%;
+//       // margin-right: 2%;
+//       li{
+//         display: inline-block;
+//       }
+//     }
+//   }
+// }

@@ -1,8 +1,8 @@
 <section class="biz" ng-if="bizCtrl.showBiz">
-  <h2 class="btn-std" hideBizDetail='bizCtrl.hideBizDetail' ng-click="bizCtrl.show=!bizCtrl.show" show="bizCtrl.show">create new Busines</h2>
+  <h2 class="btn-std" hideBizDetail='bizCtrl.hideBizDetail' ng-click="bizCtrl.show=!bizCtrl.show" show="bizCtrl.show">Add/Create New Business</h2>
   <div>
     <create-biz ng-if="bizCtrl.show"></create-biz>
   </div>
-  <h2>Business details</h2>
+  <h2>Business Details</h2>
   <biz-detail ng-repeat="item in bizCtrl.biz" biz="item" hideBizDetail='bizCtrl.hideBizDetail'></biz-detail>
 </section>
