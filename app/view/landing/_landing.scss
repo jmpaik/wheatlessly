@@ -9,12 +9,13 @@
     font-size: 8vw;
     color: $font-color-white;
     font-weight: bold;
-    margin-bottom: 2%;
+    margin-bottom: $gutter-std;
   }
   form{
     position: absolute;
+    width: 80%;
     top: 30%;
-    left: 27%;
+    left: 10%;
 
     input[type='text']{
       width: 36vw;
