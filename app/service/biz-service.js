@@ -87,31 +87,5 @@ function bizService($q, $log, $http, authService){
       return $q.resolve(res.data);
     });
   };
-
-  service.getPics = function(bizId) {
-    $log.debug('picService.getPics()');
-
-    return authService.getToken()
-    .then( token => {
-      let url = `${__API_URL__}/api/biz/${bizId}/pic`;
-      let config = {
-        headers: {
-          Accept: 'application/json',
-          Authorization: `Bearer ${token}`
-        }
-      };
-      return $http.get(url, config);
-    })
-    .then( res => {
-      $log.log('pics retrieved:', res.data);
-      service.pics = res.data;
-      return service.pics;
-    })
-    .catch( err => {
-      $log.error(err.message);
-      return $q.reject(err);
-    });
-  };
-
   return service;
 }

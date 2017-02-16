@@ -75,20 +75,14 @@ function picService($q, $log, $http) {
   service.getPics = function(bizId) {
     $log.debug('picService.getPics()');
 
-    return authService.getToken()
-    .then( token => {
-      let url = `${__API_URL__}/api/pic/${picId}`;
-      let config = {
-        headers: {
-          Accept: 'application/json',
-          Authorization: `Bearer ${token}`
-        }
-      };
-
-      return $http.get(url, config);
-    })
+    let url = `${__API_URL__}/api/biz/${bizId}/pic`;
+    let config = {
+      headers: {
+        Accept: 'application/json'
+      }
+    };
+    return $http.get(url, config)
     .then( res => {
-      $log.log('pics retrieved');
       service.pics = res.data;
       return service.pics;
     })
