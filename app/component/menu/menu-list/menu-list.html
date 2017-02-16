@@ -1,0 +1,7 @@
+<section class="menu-container">
+  <h4 class="menu-title">menu</h4>
+  <div class="menu-pic-area">
+    <img ng-repeat="pic in menuListCtrl.pics" class="menu-pic" src="{{pic}}"></img>
+  </div>
+  <button class="btn-std" ng-click="menuListCtrl.updatePics(menuListCtrl.biz)">MAKE SOMETHING HAPPEN</button>
+</section>

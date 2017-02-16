@@ -72,7 +72,7 @@ function picService($q, $log, $http) {
     });
   };
 
-  service.getPics = function(picId) {
+  service.getPics = function(bizId) {
     $log.debug('picService.getPics()');
 
     return authService.getToken()

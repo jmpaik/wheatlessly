@@ -1,0 +1,28 @@
+@import "../scss/lib/theme/vars";
+
+.menu-container{
+  display: block;
+  padding: 0;
+  width: 90%;
+  margin: 0;
+  outline: 1px solid;
+}
+
+.menu-title {
+  text-align: center;
+}
+
+.menu-pic-area {
+  display: inline-block;
+  width: auto;
+  height: auto;
+  background-color: pink
+}
+
+.menu-pic {
+  height: 100px;
+  width: 100px;
+  float: left;
+  margin: 0 auto;
+  outline: 1px solid;
+}
