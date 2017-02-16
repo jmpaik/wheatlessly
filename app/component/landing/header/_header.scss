@@ -59,6 +59,7 @@
   .header{
     padding-top: $gutter-std;
     div{
+      min-width: 20%;
       margin-right: $gutter-std;
       li{
         display: inline-block;
