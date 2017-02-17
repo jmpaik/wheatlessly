@@ -11,14 +11,10 @@ module.exports = {
 function LoginController($log, $location, $window, authService) {
   $log.debug('LoginController');
 
-
   this.login = function(user) {
     $log.log('loginCtrl.login()');
-
-
     authService.login(user)
     .then( () => {
-      $window.location.reload();
       $location.path('/business');
       $log.log('you are loggedin');
       return;

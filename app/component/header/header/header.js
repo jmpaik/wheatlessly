@@ -4,11 +4,11 @@ require('./_header.scss');
 
 module.exports = {
   template: require('./header.html'),
-  controller: ['$log', '$location', 'authService', headerController],
+  controller: ['$log', '$location', '$rootScope', 'authService', headerController],
   controllerAs: 'headerCtrl'
 };
 
-function headerController($log, $location, authService){
+function headerController($log, $location, $rootScope, authService){
   $log.debug('headerController');
   this.loginDiv = false;
 
@@ -24,17 +24,9 @@ function headerController($log, $location, authService){
     $location.url('/landing');
     authService.logout();
   };
-  this.showLoginPage = function(){
 
+  this.showHomePage = function(){
     $location.path('/home');
-    this.showLogin = true;
-    this.showSignup = false;
-  };
-  this.showSignupPage = function(){
-
-    $location.path('/home');
-    this.showSignup = true;
-    this.showLogin = false;
   };
 
   this.landing = function(){

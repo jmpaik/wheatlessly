@@ -2,13 +2,13 @@
 
 .login-form{
   width: 60%;
-  position: absolute;
-  left: 20%;
-  top: 25%;
+  padding: $gutter-std / 2 0;
+  margin: $gutter-std auto;
   color: $font-color-white;
   background: rgba(8, 8, 7, 0.78);
   form{
     margin-top: 10%;
+    margin-bottom: 15%;
     input{
       width: 50%;
       margin-left: 22%;
