@@ -12,12 +12,13 @@
   text-align: center;
   font-size: 1.5em;
   padding: 0.5vw;
+  margin: 0 auto;
 }
 
 .menu-pic-area {
   display: inline-block;
-  width: auto;
-  height: auto;
+  margin: 0;
+  border: none;
 }
 
 .menu-pic {
@@ -30,4 +31,6 @@
 
 .upload {
   text-align: center;
+  border: none;
+  padding: 0;
 }
