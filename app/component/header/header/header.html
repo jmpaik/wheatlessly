@@ -27,7 +27,7 @@
 <div class="join-container"
 ng-if="headerCtrl.showSignup">
 <div class="join-inner">
-  <signup></signup>
+  <signup on-done="headerCtrl.showSignup = false"></signup>
 </div>
 </div>
 </section>

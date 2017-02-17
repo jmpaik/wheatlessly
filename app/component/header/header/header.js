@@ -12,12 +12,11 @@ function headerController($log, $location, authService){
   $log.debug('headerController');
   this.loginDiv = false;
 
-
   authService.getToken()
   .then( () => {
     $location.path('/business');
     return this.loginDiv = true;
-  }).catch( err => $log.log('You are not loggedin, Token not found'));
+  }).catch( () => $log.log('You are not loggedin, Token not found'));
 
   this.logout = function(){
     this.loginDiv = false;
