@@ -28,7 +28,7 @@
     display: inline;
     float: right;
     margin-right: 2%;
-    li{
+    span{
       display: inline-block;
       font-size: 0.7em;
     }
@@ -46,7 +46,7 @@
       float: right;
       margin-right: 2%;
     }
-    #connect, #inform, div li{
+    #connect, #inform, div span{
       display: none;
     }
   }
