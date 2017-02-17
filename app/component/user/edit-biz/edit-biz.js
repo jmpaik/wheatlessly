@@ -7,17 +7,21 @@ module.exports = {
   controller: ['$log', '$rootScope','$location', '$window','bizService', editBizController],
   controllerAs: 'editBizCtrl',
   bindings:{
-    biz: '<'
+    biz: '<',
+    onDone: '&'
   }
 };
 function editBizController($log, $rootScope, $location, $window, bizService) {
   $log.debug('editBizController');
 
-  this.updateBiz = function(biz) {
-    bizService.updateBiz(biz)
+  this.biz = {};
+
+  this.updateBiz = function() {
+    bizService.updateBiz(this.biz)
     .then( biz => {
       this.biz = biz;
-      $window.location.reload();
+      this.onDone();
+      // $window.location.reload();
     })
     .catch( err => {
       $log.error('Failure', err);

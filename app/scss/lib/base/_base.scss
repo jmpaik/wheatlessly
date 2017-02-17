@@ -27,6 +27,7 @@ main {
 }
 
 .btn-std{
+  display: inline-block;
   border: none;
   padding: 0.3em 1.5em;
   background-color: $btn-search-color;

@@ -1,12 +1,36 @@
-<section class="bizDetail">
-  <ul ng-hide="bizDetail.hideBizDetail">
-    <li>Name: {{bizDetailCtrl.biz.name}}</li>
-    <li>FEIN: {{bizDetailCtrl.biz.EIN}}</li>
-    <li>Address: {{bizDetailCtrl.biz.address}}</li>
-    <li>Phone: {{bizDetailCtrl.biz.phone}}</li>
-    <li>Business Website: {{bizDetailCtrl.biz.url}}</li>
-  </ul>
-  <edit-biz ng-if="bizDetail.hideBizDetail" biz="bizDetailCtrl.biz"></edit-biz>
-  <button class="btn-std" ng-click="bizDetailCtrl.addPic()">Add Pic</button>
-  <button class="btn-std" ng-click="bizDetail.hideBizDetail=!bizDetail.hideBizDetail" biz="bizDetailCtrl.biz">editBiz</button>
-</section>
+<div class="biz-container">
+  <div class="biz-inner">
+    <ul ng-show="!bizDetailCtrl.editMode">
+      <li>
+        <span class="biz-label">Name:</span>
+        <span class="biz-value">{{bizDetailCtrl.biz.name}}</span>
+      </li>
+      <li>
+        <span class="biz-label">FEIN:</span>
+        <span class="biz-value">{{bizDetailCtrl.biz.EIN}}</span>
+      </li>
+      <li>
+        <span class="biz-label">Address:</span>
+        <span class="biz-value">{{bizDetailCtrl.biz.address}}</span>
+      </li>
+      <li>
+        <span class="biz-label">Phone:</span>
+        <span class="biz-value">{{bizDetailCtrl.biz.phone}}</span>
+      </li>
+      <li>
+        <span class="biz-label">Website:</span>
+        <span class="biz-value">{{bizDetailCtrl.biz.url}}</span>
+      </li>
+    </ul>
+
+    <edit-biz
+    ng-if="bizDetailCtrl.editMode"
+    on-done="bizDetailCtrl.editMode = false"
+    biz="bizDetailCtrl.biz"></edit-biz>
+
+    <span class="btn-std"
+    ng-show="!bizDetailCtrl.editMode"
+    ng-click="bizDetailCtrl.editMode = true"
+    biz="bizDetailCtrl.biz">Edit</span>
+  </div>
+</div>
