@@ -37,6 +37,7 @@
     "file-loader": "^0.9.0",
     "html-loader": "^0.4.4",
     "html-webpack-plugin": "^2.26.0",
+    "ng-dialog": "^1.0.0",
     "ng-file-upload": "^12.2.13",
     "node-sass": "^4.3.0",
     "pascalcase": "^0.1.1",
