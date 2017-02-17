@@ -8,6 +8,7 @@ function BizController($log, $location, authService, bizService) {
   $log.debug('BizController');
 
   this.showBiz = false;
+
   authService.getToken().then( () => {
     this.showBiz = true;
   });
