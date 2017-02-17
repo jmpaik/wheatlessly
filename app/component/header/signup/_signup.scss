@@ -1,0 +1,19 @@
+@import "../scss/lib/theme/vars";
+
+.signup-form{
+  position: absolute;
+  width: 50%;
+  min-width: 275px;
+  max-width: 420px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: $font-color-white;
+  background: rgba(8, 8, 7, 0.78);
+  padding: 2%;
+  .signup-container {
+    width: 40%;
+    min-width: 210px;
+    margin: 2% auto;
+  }
+}

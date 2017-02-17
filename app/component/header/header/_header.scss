@@ -1,0 +1,85 @@
+@import "../scss/lib/theme/vars";
+.header{
+  background: rgba(8, 8, 7, 0.78);
+  color: $font-color-white;
+  font-weight: bold;
+  height: 6vh;
+  width: 100%;
+  padding-top: 1%;
+  position: relative;
+  button{
+    font-size: 1em;
+    background-color: inherit;
+    font-weight: bold;
+    color: $font-color-white;
+    border: none;
+    outline-style: none;
+    &:hover{
+      outline-style: solid;
+      outline-color: $font-color-white;
+      outline-width: thin;
+    }
+  }
+  .left-nav{
+    float: left;
+    margin-left: 2%;
+  }
+  div{
+    display: inline;
+    float: right;
+    margin-right: 2%;
+    span{
+      display: inline-block;
+      font-size: 0.7em;
+    }
+  }
+  clear: both;
+}
+
+@media screen and (max-width: 666px){
+  .header{
+    height: 6vh;
+    width: 100%;
+    position: relative;
+    div{
+      display: inline;
+      float: right;
+      margin-right: 2%;
+    }
+    #connect, #inform, div span{
+      display: none;
+    }
+  }
+  .left-nav{
+    float: left;
+    margin-left: 2%;
+  }
+}
+@media screen and (min-width:666px) and (max-width: 800px){
+  .header{
+    height: 6vh;
+    width: 100%;
+    position: relative;
+    div{
+      display: inline;
+      float: right;
+      margin-right: 2%;
+    }
+    .left-nav{
+      float: left;
+      margin-left: 2%;
+    }
+  }
+}
+// @media screen and (min-width:800px){
+//   .header{
+//     // padding-top: $gutter-std;
+//     div{
+//       // min-width: 20%;
+//       // margin-right: 2%;
+//       li{
+//         display: inline-block;
+//       }
+//     }
+//   }
+// }

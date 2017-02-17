@@ -1,0 +1,53 @@
+<div class="biz-inner">
+  <form name="edit-biz-form">
+    <fieldset>
+      <label for="name">Name: </label>
+      <input class="input-std"
+      name="name"
+      type="text"
+      placeholder="Business Name"
+      ng-model="editBizCtrl.biz.name" required>
+    </fieldset>
+
+    <fieldset>
+      <label for="EIN">FEIN: </label>
+      <input class="input-std"
+      name="EIN"
+      type="text"
+      placeholder="Federal Employer Identification Number"
+      ng-model="editBizCtrl.biz.EIN" required>
+    </fieldset>
+
+    <fieldset>
+      <label for="address">Address: </label>
+      <input class="input-std"
+      name="address"
+      type="text"
+      placeholder="Address"
+      ng-model="editBizCtrl.biz.address" required>
+    </fieldset>
+
+    <fieldset>
+      <label for="phone">Phone: </label>
+      <input class="input-std"
+      name="phone"
+      type="tel"
+      placeholder="Phone"
+      ng-model="editBizCtrl.biz.phone" required>
+    </fieldset>
+
+    <fieldset>
+      <label for="url">Website: </label>
+      <input class="input-std"
+      name="url"
+      type="url"
+      placeholder="Business URL Address"
+      ng-model="editBizCtrl.biz.url">
+    </fieldset>
+
+    <menu-list biz="editBizCtrl.biz"></menu-list>
+
+    <span class="btn-std" ng-click="editBizCtrl.updateBiz()">Save</span>
+
+  </form>
+</div>

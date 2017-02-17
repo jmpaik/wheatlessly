@@ -1,0 +1,29 @@
+@import "../scss/lib/theme/vars";
+
+.biz-label {
+  width: 20%;
+  height: auto;
+  display: inline-block;
+  text-align: right;
+}
+li {
+  padding: 1%;
+}
+ul {
+  margin-bottom: 2%;
+}
+/*
+.bizDetail{
+  width: 85%;
+  margin: $gutter-std;
+  padding: $gutter-std / 2  $gutter-std;
+  // background: rgba(195, 195, 123, 0.78);
+  border: 1px $font-color-white solid;
+  ul{
+    padding: $gutter-std / 2;
+  }
+  li{
+    padding: $gutter-std / 4;
+  }
+}
+*/

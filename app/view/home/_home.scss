@@ -1,0 +1,11 @@
+@import "../scss/lib/theme/vars";
+
+.home{
+  min-height: 70vh;
+  width: 70%;
+  margin-left:  15%;
+  // background: rgba(8, 8, 7, 0.78);
+  color: $font-color-white;
+  font-size: 1em;
+  padding: $gutter-std 0;
+}

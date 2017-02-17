@@ -1,7 +1,6 @@
-// Karma configuration
-// Generated on Fri Feb 10 2017 14:33:05 GMT-0800 (PST)
+'use strict';
 
-const webpack= require('./webpack.config.js');
+const webpack = require('./webpack.config.js');
 webpack.entry = {};
 
 module.exports = function(config) {
@@ -12,10 +11,9 @@ module.exports = function(config) {
     files: [
       'app/entry.js',
       'test/**/*-test.js',
-      'node_modules/angular-mocks/angular-mocks.js',
+      'node_modules/angular-mocks/angular-mocks.js'
     ],
-    exclude: [
-    ],
+    exclude: [],
     preprocessors: {
       'test/**/*-test.js': ['webpack'],
       'app/entry.js': ['webpack'],

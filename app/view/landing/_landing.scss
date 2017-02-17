@@ -1,0 +1,70 @@
+@import "../scss/lib/theme/vars";
+.landing {
+  width: 100%;
+  height: 75vh;
+  text-align: center;
+  position: relative;
+
+  h2 {
+    position: absolute;
+    color: $font-color-white;
+    font-weight: bold;
+  }
+  .map-container {
+    position: absolute;
+  }
+  .search-bar {
+    width: 66%;
+    max-width: 255px;
+    position: absolute;
+  }
+
+  .cover {
+    h2 {
+      font-size: 3em;
+      top: 41%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .search-bar {
+      top: 52%;
+      left: 48%;
+      transform: translateX(-50%);
+    }
+    .map-container {
+      width: 90%;
+      height: 90%;
+      left: -300%;
+    }
+  }
+
+  .searching {
+    h2 {
+      top: $gutter-std / 4;
+      left: 5%;
+      font-size: 1.5em;
+      transform: none;
+    }
+    .search-bar {
+      top: $gutter-std / 3;
+      right: 7%;
+      width: 43%;
+    }
+    .map-container {
+      width: 90%;
+      height: 90%;
+      top: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  input[type='text'] {
+    width: 100%;
+    padding: $gutter-std / 4 $gutter-std / 2;
+    color: $font-color-tin;
+    border: none;
+    font-weight: bold;
+    font-size: 0.8em;
+    background-color: $font-color-white;
+  }
+}
