@@ -5,7 +5,7 @@
   padding: 0;
   width: 90%;
   margin: 0;
-  outline: 1px solid;
+  //outline: 1px solid;
 }
 
 .menu-title {
@@ -22,15 +22,14 @@
 }
 
 .menu-pic {
-  height: 100px;
-  width: 100px;
-  float: left;
-  margin: 0 auto;
+  width: 75px;
+  height: 75px;
+  margin: auto 1vw;
   outline: 1px solid;
 }
 
 .upload {
-  text-align: center;
+  text-align: left;
   border: none;
   padding: 0;
 }
