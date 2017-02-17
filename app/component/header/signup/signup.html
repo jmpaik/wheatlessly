@@ -2,22 +2,23 @@
   <form
   name="signupForm">
 
-  <input class="input-std"
-  type="email"
-  placeholder="email"
-  ng-model="signupCtrl.user.email" required />
+  <div class="signup-container">
+    <input class="input-std"
+    type="email"
+    placeholder="email"
+    ng-model="signupCtrl.user.email" required />
 
-  <input class="input-std"
-  type="email"
-  placeholder="re-enter email"
-  ng-model="signupCtrl.user.emailCopy" required />
+    <input class="input-std"
+    type="email"
+    placeholder="re-enter email"
+    ng-model="signupCtrl.user.emailCopy" required />
 
-  <input class="input-std"
-  type="password"
-  placeholder="password"
-  ng-minlength="3"
-  ng-model="signupCtrl.user.password" required />
-
-  <button class="btn-std" ng-click="signupCtrl.signup(signupCtrl.user)">Join</button>
+    <input class="input-std"
+    type="password"
+    placeholder="password"
+    ng-minlength="3"
+    ng-model="signupCtrl.user.password" required />
+    <button class="btn-std" ng-click="signupCtrl.signup(signupCtrl.user)">Join</button>
+  </div>
 </form>
 </section>

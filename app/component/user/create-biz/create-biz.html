@@ -1,49 +1,59 @@
-<section class="create-biz">
-  <form name="create-biz-form">
-    <fieldset>
-      <label for="name">Name: </label>
-      <input class="input-std"
-      name="name"
-      type="text"
-      placeholder="Business Name"
-      ng-model="createBizCtrl.biz.name" required/>
-    </fieldset>
+<div class="biz-container">
+  <div class="biz-inner">
+    <form name="create-biz-form">
+      <fieldset>
+        <label for="name">Name: </label>
+        <input class="input-std"
+        name="name"
+        type="text"
+        placeholder="Business Name"
+        ng-model="createBizCtrl.biz.name" required/>
+      </fieldset>
 
-    <fieldset>
-      <label for="EIN">FEIN: </label>
-      <input class="input-std"
-      name="EIN"
-      type="text"
-      placeholder="Federal Employer Identification Number"
-      ng-model="createBizCtrl.biz.EIN" required/>
-    </fieldset>
+      <fieldset>
+        <label for="EIN">FEIN: </label>
+        <input class="input-std"
+        name="EIN"
+        type="text"
+        placeholder="Federal Employer Identification Number"
+        ng-model="createBizCtrl.biz.EIN" required/>
+      </fieldset>
 
-    <fieldset>
-      <label for="address">Address: </label>
-      <input class="input-std"
-      name="address"
-      type="text"
-      placeholder="Business Address"
-      ng-model="createBizCtrl.biz.address" required/>
-    </fieldset>
+      <fieldset>
+        <label for="address">Address: </label>
+        <input class="input-std"
+        name="address"
+        type="text"
+        placeholder="Business Address"
+        ng-model="createBizCtrl.biz.address" required/>
+      </fieldset>
 
-    <fieldset>
-      <label for="phone">Phone: </label>
-      <input class="input-std"
-      name="phone"
-      type="tel"
-      placeholder="Business Phone"
-      ng-model="createBizCtrl.biz.phone" required/>
-    </fieldset>
+      <fieldset>
+        <label for="phone">Phone: </label>
+        <input class="input-std"
+        name="phone"
+        type="tel"
+        placeholder="Business Phone"
+        ng-model="createBizCtrl.biz.phone" required/>
+      </fieldset>
 
-    <fieldset>
-      <label for="url">Business Website: </label>
-      <input class="input-std"
-      name="url"
-      type="url"
-      placeholder="Business URL Address"
-      ng-model="createBizCtrl.biz.url">
-    </fieldset>
-    <button class="btn-std" ng-click="createBizCtrl.createBiz(createBizCtrl.biz)">Save it</button>
-  </form>
-</section>
+      <fieldset>
+        <label for="url">Website: </label>
+        <input class="input-std"
+        name="url"
+        type="url"
+        placeholder="Business URL Address"
+        ng-model="createBizCtrl.biz.url">
+      </fieldset>
+    </form>
+    <div class="buttons">
+      <span class="btn-std"
+      ng-click="createBizCtrl.createBiz()">
+      Save it</span>
+
+      <span class="btn-std"
+      ng-click="createBizCtrl.onDone()">
+      Cancel</span>
+    </div>
+  </div>
+</div>

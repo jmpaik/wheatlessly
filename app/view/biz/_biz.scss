@@ -1,21 +1,42 @@
 @import "../scss/lib/theme/vars";
 
 .biz{
-  height: 70%;
+  height: 85%;
   width: 70%;
   margin-left:  15%;
   background: rgba(8, 8, 7, 0.78);
   color: $font-color-white;
   font-size: 1em;
   padding: $gutter-std 0;
+  overflow: auto;
   h2{
     margin: $gutter-std;
     text-align: center;
   }
-  div{
-    height: 70%;
-    width: 90%;
-    margin-left:  5%;
+  .biz-container {
+    width: 85%;
+    margin: 0 auto;
+    padding: 2%;
     border: 1px $font-color-white solid;
+  }
+  .biz-inner {
+    width: 80%;
+    height: auto;
+    border: none;
+    margin: 0 auto;
+
+    label {
+      width: 20%;
+      height: auto;
+      display: inline-block;
+      text-align: right;
+    }
+    input{
+      display: inline-block;
+    }
+    .buttons {
+      width: 80%;
+      margin: 3% auto;
+    }
   }
 }

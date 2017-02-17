@@ -5,27 +5,26 @@ require('./_create-biz.scss');
 module.exports = {
   template: require('./create-biz.html'),
   controller: ['$log', '$location', 'bizService', CreateBizController],
-  controllerAs: 'createBizCtrl'
+  controllerAs: 'createBizCtrl',
+  bindings: {
+    onDone: '&',
+  }
 };
 function CreateBizController($log, $location, bizService) {
   $log.debug('CreateBizController');
 
-  this.createBiz = function(biz) {
+  this.biz = {};
+
+  this.createBiz = function() {
     $log.log('createBizCtrl.createBiz()');
 
-    bizService.createBiz(biz)
+    bizService.createBiz(this.biz)
     .then( biz => {
-      $log.log('success', biz)
-      bizService.getBiz()
-      .then(biz => {
-        $log.log('success new biz- ', biz);
-      })
-      .catch( err => {
-        $log.error('Failure', err);
-      });
-    })
-    .catch( err => {
-      $log.error('Failure', err);
+      $log.log('success', biz);
+      this.onDone();
     });
+    // .catch( err => {
+    //   $log.error('Failure', err);
+    // });
   };
 }

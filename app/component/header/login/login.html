@@ -2,17 +2,19 @@
   <form
   name="loginForm">
 
-  <input class="input-std"
-  type="email"
-  placeholder="email"
-  ng-model="loginCtrl.user.email" required>
+  <div class="login-container">
+    <input class="input-std"
+    type="email"
+    placeholder="email"
+    ng-model="loginCtrl.user.email" required>
 
-  <input class="input-std"
-  type="password"
-  placeholder="password"
-  ng-minlength="3"
-  ng-model="loginCtrl.user.password" required>
+    <input class="input-std"
+    type="password"
+    placeholder="password"
+    ng-minlength="3"
+    ng-model="loginCtrl.user.password" required>
 
-  <button class="btn-std" ng-click="loginCtrl.login(loginCtrl.user)">Login</button>
+    <button class="btn-std" ng-click="loginCtrl.login(loginCtrl.user)">Login</button>
+  </div>
 </form>
 </section>
