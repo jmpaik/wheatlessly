@@ -87,6 +87,5 @@ function bizService($q, $log, $http, authService){
       return $q.resolve(res.data);
     });
   };
-
   return service;
 }
