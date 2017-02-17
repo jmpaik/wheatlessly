@@ -23,7 +23,7 @@ function SearchMapController($log, bizService) {
     $log.debug('place changed:', place);
     // map.panToBounds(place.geometry.viewport);
     map.setCenter(place.geometry.location);
-    map.setZoom(10);
+    map.setZoom(11);
     this.onSearch();
   });
   map.addListener('zoom_changed', mapChanged);
