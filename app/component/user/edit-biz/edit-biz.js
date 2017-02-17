@@ -18,6 +18,7 @@ function editBizController($log, $rootScope, $location, $window, bizService) {
     .then( biz => {
       this.biz = biz;
       $window.location.reload();
+      // $location.url('/business');
     })
     .catch( err => {
       $log.error('Failure', err);

@@ -24,18 +24,9 @@ function headerController($log, $location, $rootScope, authService){
     $location.url('/landing');
     authService.logout();
   };
-  this.showLoginPage = function(){
 
+  this.showHomePage = function(){
     $location.path('/home');
-    this.showLogin = true;
-    this.showSignup = false;
-  };
-
-  this.showSignupPage = function(){
-
-    $location.path('/home');
-    this.showSignup = true;
-    this.showLogin = false;
   };
 
   this.landing = function(){
