@@ -1,21 +1,19 @@
 @import "../scss/lib/theme/vars";
 
 .signup-form{
-  width: 60%;
   position: absolute;
-  left: 20%;
-  top: 25%;
+  width: 50%;
+  min-width: 275px;
+  max-width: 420px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   color: $font-color-white;
   background: rgba(8, 8, 7, 0.78);
-  form{
-    margin-top: 10%;
-    input{
-      width: 50%;
-      margin-left: 22%;
-    }
-    button{
-      float: right;
-      margin-right: 19%;
-    }
+  padding: 2%;
+  .signup-container {
+    width: 40%;
+    min-width: 210px;
+    margin: 2% auto;
   }
 }
