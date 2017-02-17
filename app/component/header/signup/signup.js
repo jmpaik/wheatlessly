@@ -5,7 +5,10 @@ require('./_signup.scss');
 module.exports = {
   template: require('./signup.html'),
   controller: ['$log', '$location', 'authService', SignupController],
-  controllerAs: 'signupCtrl'
+  controllerAs: 'signupCtrl',
+  bindings: {
+    onDone: '&'
+  }
 };
 
 function SignupController($log, $location, authService) {
@@ -22,9 +25,10 @@ function SignupController($log, $location, authService) {
     console.log(user);
     authService.signup(user)
     .then( () => {
-      $window.location.reload();
+      // $window.location.reload();
       $location.path('/business');
       $log.log('you are signin');
+      this.onDone();
       return;
     })
     .catch( err => {

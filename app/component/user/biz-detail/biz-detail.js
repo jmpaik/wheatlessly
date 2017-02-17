@@ -4,24 +4,14 @@ require('./_biz-detail.scss');
 
 module.exports = {
   template: require('./biz-detail.html'),
-  controller: ['$log', 'bizService', 'picService', bizDetailController],
+  controller: ['$log', bizDetailController],
   controllerAs: 'bizDetailCtrl',
   bindings: {
-    hideBizDetail: '<',
     biz: '<'
   }
 };
 
-function bizDetailController($log, bizService, picService){
+function bizDetailController($log) {
   $log.debug('bizDetailController');
-  this.hideEdit = false;
-  this.addPic = function(){
-    picService.addPic()
-    .then( pic => {
-      $log.log('pic upload');
-    })
-    .catch( err => {
-      $log.error('Failure', err);
-    });
-  };
-};
+  this.editMode = false;
+}

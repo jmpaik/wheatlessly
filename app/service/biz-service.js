@@ -23,6 +23,7 @@ function bizService($q, $log, $http, authService){
   let service = {};
 
   service.searchResults = [];
+  service.bizs = []; //User bizs
 
   service.createBiz = function(biz){
     $log.debug('bizService.createBiz()');
@@ -33,6 +34,7 @@ function bizService($q, $log, $http, authService){
     })
     .then( res => {
       //TODO: Look for error conditions and reject
+      this.bizs.push(res.data);
       return $q.resolve(res.data);
     });
   };
@@ -47,6 +49,7 @@ function bizService($q, $log, $http, authService){
     })
     .then( res => {
       //TODO: Look for error conditions and reject
+      this.bizs = res.data;
       return $q.resolve(res.data);
     });
   };
