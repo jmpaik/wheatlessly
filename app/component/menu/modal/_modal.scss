@@ -1,0 +1,21 @@
+.shitty-modal {
+  position: fixed;
+  text-align: center;
+  z-index: 1000;
+  width: 90vw;
+  overflow: hidden;
+}
+
+.shitty-modal-title {
+  background-color: black;
+  color: white;
+  font-size: 2em;
+  width: 100%;
+  text-align: center;
+}
+
+.menu-img {
+  text-align: center;
+  padding: 2vw 5vw;
+  max-width: 100%;
+}

@@ -1,22 +1,21 @@
+
 <section class="menu-container">
-  <h4 class="menu-title">menu</h4>
+
+  <h4 class="menu-title">Menu</h4>
+
   <div class="menu-pic-area">
-    <img ng-repeat="pic in menuListCtrl.pics" class="menu-pic" src="{{pic}}"></img>
+    <img ng-repeat="pic in menuListCtrl.pics" ng-click="menuListCtrl.popup(pic)" class="menu-pic" src="{{ pic }}"></img>
   </div>
-  <button class="btn-std" ng-click="menuListCtrl.updatePics()">MAKE SOMETHING HAPPEN</button>
 
   <form novalidate>
-    <div>
-      <button class="grab-img"
+    <div class="upload">
+      <button class="btn-std"
         ngf-select
         ng-model="menuListCtrl.pic.file">
-        select a pic to upload
+        Select new menu photo
       </button>
-      <fieldset>
-        <input class="input-std" type="text" ng-model="menuListCtrl.pic.title" placeholder="name">
-      </fieldset>
-
-      <button ng-click="menuListCtrl.upload()" class="btn-std">upload</button>
+      <button ng-click="menuListCtrl.upload()" class="btn-std">Upload</button>
     </div>
   </form>
+
 </section>
