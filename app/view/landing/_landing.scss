@@ -15,14 +15,14 @@
   }
   .search-bar {
     width: 66%;
-    max-width: 255px;
+    max-width: 429px;
     position: absolute;
   }
 
   .cover {
     h2 {
-      font-size: 3em;
-      top: 41%;
+      font-size: 6em;
+      top: 35%;
       left: 50%;
       transform: translateX(-50%);
     }
@@ -38,11 +38,12 @@
     }
   }
 
+
   .searching {
     h2 {
       top: $gutter-std / 4;
       left: 5%;
-      font-size: 1.5em;
+      font-size: 2.7em;
       transform: none;
     }
     .search-bar {
@@ -64,7 +65,43 @@
     color: $font-color-tin;
     border: none;
     font-weight: bold;
-    font-size: 0.8em;
+    font-size: 1.1em;
     background-color: $font-color-white;
   }
+
+  @media screen and (max-width: 320px) {
+    .searching {
+      h2 {
+        font-size: 1.5em;
+      }
+    }
+  }
+
+  @media screen and (min-width: 320px) and (max-width: 666px) {
+    .cover {
+      h2 {
+        font-size: 3em;
+      }
+      .search-bar {
+        top: 47%;
+        input {
+          font-size: 0.8em;
+        }
+      }
+    }
+    .searching {
+      h2 {
+        font-size: 2em;
+      }
+    }
+  }
+
+  // @media screen and (min-width: 666px) and (max-width: 800px) {
+  //   .searching {
+  //     h2 {
+  //       font-size: 2.7em;
+  //     }
+  //   }
+  // }
+
 }
